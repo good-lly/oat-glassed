@@ -58,10 +58,10 @@
     border: 1px solid var(--glass-border);
     border-inline-start-width: var(--space-1);
     border-inline-start-style: solid;
-    border-radius: var(--radius-medium);
+    border-radius: var(--radius-large);
     box-shadow: var(--shadow-large);
-    backdrop-filter: blur(var(--glass-blur));
-    -webkit-backdrop-filter: blur(var(--glass-blur));
+    backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
     transition: opacity var(--transition-in), transform var(--transition-in), margin var(--transition-in);
     line-height: 1;
 
@@ -111,7 +111,7 @@
 
     &[data-entering] {
       opacity: 0;
-      transform: translateY(-1rem);
+      transform: translateY(-1rem) scale(0.95);
     }
 
     &[data-exiting] {

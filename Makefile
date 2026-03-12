@@ -1,5 +1,4 @@
 # oat - Build System
-# Requires: esbuild
 
 .PHONY: dist css js clean size publish
 
@@ -23,6 +22,11 @@ CSS_FILES = src/css/00-base.css \
             src/css/sidebar.css \
             src/css/skeleton.css \
             src/css/tooltip.css \
+            src/css/nav.css \
+            src/css/tag.css \
+            src/css/avatar.css \
+            src/css/empty-state.css \
+            src/css/command.css \
             src/css/utilities.css
 
 dist: css js size

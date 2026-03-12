@@ -18,13 +18,13 @@
     padding: var(--space-2) var(--space-3);
     font-size: var(--text-7);
     line-height: var(--leading-normal);
-    background-color: light-dark(rgb(255 255 255 / 0.6), rgb(255 255 255 / 0.04));
+    background-color: light-dark(rgb(255 255 255 / 0.45), rgb(255 255 255 / 0.04));
     color: var(--foreground);
     border: 1px solid var(--input);
     border-radius: var(--radius-medium);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    box-shadow: inset 0 1px 0 light-dark(rgb(255 255 255 / 0.5), rgb(255 255 255 / 0.03));
+    backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+    box-shadow: inset 0 1px 0 light-dark(rgb(255 255 255 / 0.6), rgb(255 255 255 / 0.04));
     transition: border-color var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast);
 
     &::placeholder {
@@ -34,7 +34,7 @@
     &:focus {
       outline: none;
       border-color: var(--ring);
-      background-color: light-dark(rgb(255 255 255 / 0.8), rgb(255 255 255 / 0.06));
+      background-color: light-dark(rgb(255 255 255 / 0.6), rgb(255 255 255 / 0.06));
       box-shadow:
         0 0 0 3px rgb(from var(--ring) r g b / 0.12),
         inset 0 1px 0 light-dark(rgb(255 255 255 / 0.5), rgb(255 255 255 / 0.03));

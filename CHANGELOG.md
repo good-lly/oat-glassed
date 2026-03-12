@@ -1,3 +1,5 @@
+- added nav.css, tag.css, avatar.css, empty-state.css, command.css to the package
+- added index file to list all elements in the package
 - design changes for more glassy look
 - use of npx over global install esbuild
 - update docs config and title to Oat Glassed

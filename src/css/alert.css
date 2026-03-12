@@ -4,12 +4,14 @@
     display: flex;
     gap: var(--space-3);
     padding: var(--space-4) var(--space-6);
-    background-color: light-dark(rgb(255 255 255 / 0.5), rgb(255 255 255 / 0.03));
-    border: 1px solid var(--border);
+    background-color: light-dark(rgb(255 255 255 / 0.4), rgb(255 255 255 / 0.03));
+    background-image: var(--glass-highlight);
+    border: 1px solid var(--glass-border);
     border-radius: var(--radius-medium);
     font-size: var(--text-7);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+    box-shadow: var(--shadow-small);
 
     &[data-variant] {
       border: none;
@@ -19,8 +21,8 @@
     &[data-variant="danger"] {
       color: var(--danger);
       background-color: light-dark(
-        color-mix(in srgb, var(--danger) 6%, rgb(255 255 255 / 0.4)),
-        color-mix(in srgb, var(--danger) 12%, rgb(0 0 0 / 0.3))
+        color-mix(in srgb, var(--danger) 6%, rgb(255 255 255 / 0.35)),
+        color-mix(in srgb, var(--danger) 12%, rgb(0 0 0 / 0.25))
       );
       border: 1px solid light-dark(
         rgb(from var(--danger) r g b / 0.15),
@@ -35,8 +37,8 @@
     &[data-variant="success"] {
       color: var(--success);
       background-color: light-dark(
-        color-mix(in srgb, var(--success) 6%, rgb(255 255 255 / 0.4)),
-        color-mix(in srgb, var(--success) 12%, rgb(0 0 0 / 0.3))
+        color-mix(in srgb, var(--success) 6%, rgb(255 255 255 / 0.35)),
+        color-mix(in srgb, var(--success) 12%, rgb(0 0 0 / 0.25))
       );
       border: 1px solid light-dark(
         rgb(from var(--success) r g b / 0.15),
@@ -51,8 +53,8 @@
     &[data-variant="warning"] {
       color: var(--warning);
       background-color: light-dark(
-        color-mix(in srgb, var(--warning) 6%, rgb(255 255 255 / 0.4)),
-        color-mix(in srgb, var(--warning) 12%, rgb(0 0 0 / 0.3))
+        color-mix(in srgb, var(--warning) 6%, rgb(255 255 255 / 0.35)),
+        color-mix(in srgb, var(--warning) 12%, rgb(0 0 0 / 0.25))
       );
       border: 1px solid light-dark(
         rgb(from var(--warning) r g b / 0.15),

@@ -6,7 +6,9 @@
     padding: var(--space-1);
     background-color: var(--muted);
     border-radius: var(--radius-medium);
-    border: 1px solid var(--border);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
   }
 
   [role="tab"] {
@@ -21,6 +23,7 @@
     color: var(--muted-foreground);
     border: none;
     border-radius: calc(var(--radius-medium) - 2px);
+    box-shadow: none;
     cursor: pointer;
     transition: background-color var(--transition-fast), color var(--transition-fast), box-shadow var(--transition-fast);
 
@@ -29,11 +32,11 @@
     }
 
     &[aria-selected="true"] {
-      background-color: light-dark(rgb(255 255 255 / 0.85), rgb(255 255 255 / 0.08));
+      background-color: light-dark(rgb(255 255 255 / 0.75), rgb(255 255 255 / 0.1));
       color: var(--foreground);
       box-shadow: var(--shadow-small);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
+      backdrop-filter: blur(12px) saturate(var(--glass-saturate));
+      -webkit-backdrop-filter: blur(12px) saturate(var(--glass-saturate));
     }
   }
 

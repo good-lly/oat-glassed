@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oat — All Components</title>
+  <link rel="stylesheet" href="dist/oat.min.css">
+  <script>
+    (function() {
+      var t = localStorage.getItem('theme');
+      if (t) {
+        document.documentElement.style.colorScheme = t;
+        document.documentElement.setAttribute('data-theme', t);
+      }
+    })();
+  </script>
+  <script src="dist/oat.min.js" defer></script>
+  <style>
+    body { padding: var(--space-8) var(--space-4); max-width: 960px; margin: 0 auto; }
+    .component-section { margin-bottom: var(--space-16); }
+    .component-section > h2 { border-bottom: 1px solid var(--border); padding-bottom: var(--space-2); margin-bottom: var(--space-6); }
+    .demo { border: 1px solid var(--border); border-radius: var(--radius-medium); padding: var(--space-6); margin-top: var(--space-4); }
+    .demo-grid [class*="col-"] { background: var(--primary); color: var(--primary-foreground); padding: var(--space-2); text-align: center; border-radius: 3px; }
+    .demo-grid .row:not(:last-child) { margin-bottom: var(--space-4); }
+    nav.page-nav { position: sticky; top: 0; background: var(--background); z-index: 100; padding: var(--space-4) 0; border-bottom: 1px solid var(--border); margin-bottom: var(--space-8); }
+    nav.page-nav ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: var(--space-2); margin: 0; }
+    nav.page-nav a { font-size: var(--text-7); }
+    html[data-theme="dark"] .icon-dark { display: none; }
+    html:not([data-theme="dark"]) .icon-light { display: none; }
+  </style>
+</head>
+<body>
+
+<header style="margin-bottom: var(--space-8);">
+  <div class="hstack justify-between" style="align-items: center;">
+    <div>
+      <h1 style="margin: 0;">Oat Components</h1>
+      <p class="text-light">All components rendered with the latest build.</p>
+    </div>
+    <button class="outline small" onclick="toggleTheme()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon-light" aria-label="Light mode"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon-dark" aria-label="Dark mode"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      Theme
+    </button>
+  </div>
+</header>
+
+<nav class="page-nav">
+  <ul>
+    <li><a href="#typography">Typography</a></li>
+    <li><a href="#button">Button</a></li>
+    <li><a href="#badge">Badge</a></li>
+    <li><a href="#card">Card</a></li>
+    <li><a href="#form">Form</a></li>
+    <li><a href="#switch">Switch</a></li>
+    <li><a href="#table">Table</a></li>
+    <li><a href="#accordion">Accordion</a></li>
+    <li><a href="#tabs">Tabs</a></li>
+    <li><a href="#alert">Alert</a></li>
+    <li><a href="#dialog">Dialog</a></li>
+    <li><a href="#dropdown">Dropdown</a></li>
+    <li><a href="#toast">Toast</a></li>
+    <li><a href="#tooltip">Tooltip</a></li>
+    <li><a href="#progress">Progress</a></li>
+    <li><a href="#meter">Meter</a></li>
+    <li><a href="#spinner">Spinner</a></li>
+    <li><a href="#skeleton">Skeleton</a></li>
+    <li><a href="#breadcrumb">Breadcrumb</a></li>
+    <li><a href="#pagination">Pagination</a></li>
+    <li><a href="#grid">Grid</a></li>
+    <li><a href="#nav">Nav</a></li>
+    <li><a href="#tag">Tag</a></li>
+    <li><a href="#avatar">Avatar</a></li>
+    <li><a href="#empty-state">Empty State</a></li>
+    <li><a href="#command">Command</a></li>
+    <li><a href="#sidebar">Sidebar</a></li>
+  </ul>
+</nav>
+
+<!-- Typography -->
+<section class="component-section" id="typography">
+  <h2>Typography</h2>
+  <p>Base text elements are styled automatically. No classes needed.</p>
+  <div class="demo">
+    <h1>Heading 1</h1>
+    <h2>Heading 2</h2>
+    <h3>Heading 3</h3>
+    <h4>Heading 4</h4>
+    <h5>Heading 5</h5>
+    <h6>Heading 6</h6>
+    <p>This is a paragraph with <strong>bold text</strong>, <em>italic text</em>, and <a href="#">a link</a>.</p>
+    <p>Here's some <code>inline code</code> and a code block:</p>
+    <pre><code>function hello() {
+  console.log('Hello, World!');
+}</code></pre>
+    <blockquote>This is a blockquote. It's styled automatically.</blockquote>
+    <hr>
+    <ul>
+      <li>Unordered list item 1</li>
+      <li>Unordered list item 2</li>
+      <li>Unordered list item 3</li>
+    </ul>
+    <ol>
+      <li>Ordered list item 1</li>
+      <li>Ordered list item 2</li>
+      <li>Ordered list item 3</li>
+    </ol>
+  </div>
+</section>
+
+<!-- Button -->
+<section class="component-section" id="button">
+  <h2>Button</h2>
+  <p>Variants, sizes, and button groups.</p>
+  <div class="demo">
+    <div class="hstack" style="flex-wrap: wrap;">
+      <button>Primary</button>
+      <button data-variant="secondary">Secondary</button>
+      <button data-variant="danger">Danger</button>
+      <button class="outline">Outline</button>
+      <button data-variant="danger" class="outline">Danger Outline</button>
+      <button class="ghost">Ghost</button>
+      <button disabled>Disabled</button>
+    </div>
+  </div>
+  <h4>Sizes</h4>
+  <div class="demo">
+    <div class="hstack" style="align-items: center; flex-wrap: wrap;">
+      <button class="small">Small</button>
+      <button>Default</button>
+      <button class="large">Large</button>
+      <a href="#button" class="button">Hyperlink</a>
+    </div>
+  </div>
+  <h4>Button group</h4>
+  <div class="demo">
+    <menu class="buttons">
+      <li><button class="outline">Left</button></li>
+      <li><button class="outline">Center</button></li>
+      <li><button class="outline">Right</button></li>
+    </menu>
+  </div>
+</section>
+
+<!-- Badge -->
+<section class="component-section" id="badge">
+  <h2>Badge</h2>
+  <p>Inline badge / tag / pill labels.</p>
+  <div class="demo">
+    <div class="hstack" style="flex-wrap: wrap;">
+      <span class="badge">Default</span>
+      <span class="badge secondary">Secondary</span>
+      <span class="badge outline">Outline</span>
+      <span class="badge success">Success</span>
+      <span class="badge warning">Warning</span>
+      <span class="badge danger">Danger</span>
+    </div>
+  </div>
+</section>
+
+<!-- Card -->
+<section class="component-section" id="card">
+  <h2>Card</h2>
+  <p>Card containers using the semantic <code>&lt;article&gt;</code> tag.</p>
+  <div class="demo">
+    <article class="card">
+      <header>
+        <h3>Card Title</h3>
+        <p>Card description goes here.</p>
+      </header>
+      <p>This is the card content. It can contain any HTML.</p>
+      <footer class="hstack">
+        <button class="outline">Cancel</button>
+        <button>Save</button>
+      </footer>
+    </article>
+  </div>
+</section>
+
+<!-- Form -->
+<section class="component-section" id="form">
+  <h2>Form Elements</h2>
+  <p>Inputs, selects, textareas, checkboxes, radios, and fieldsets.</p>
+  <div class="demo">
+    <form onsubmit="event.preventDefault()">
+      <label data-field>
+        Name
+        <input type="text" placeholder="Enter your name">
+      </label>
+      <label data-field>
+        Email
+        <input type="email" placeholder="you@example.com">
+      </label>
+      <label data-field>
+        Password
+        <input type="password" placeholder="Password" aria-describedby="pw-hint">
+        <small id="pw-hint" data-hint>This is a small hint</small>
+      </label>
+      <div data-field>
+        <label>Select</label>
+        <select aria-label="Select an option">
+          <option value="">Select an option</option>
+          <option value="a">Option A</option>
+          <option value="b">Option B</option>
+          <option value="c">Option C</option>
+        </select>
+      </div>
+      <label data-field>
+        Message
+        <textarea placeholder="Your message..."></textarea>
+      </label>
+      <label data-field>
+        Disabled
+        <input type="text" placeholder="Disabled" disabled>
+      </label>
+      <label data-field>
+        File<br>
+        <input type="file" placeholder="Pick a file...">
+      </label>
+      <label data-field>
+        Date
+        <input type="date">
+      </label>
+      <label data-field>
+        <input type="checkbox"> I agree to the terms
+      </label>
+      <fieldset class="hstack">
+        <legend>Preference</legend>
+        <label><input type="radio" name="pref"> Option A</label>
+        <label><input type="radio" name="pref"> Option B</label>
+        <label><input type="radio" name="pref"> Option C</label>
+      </fieldset>
+      <label data-field>
+        Volume
+        <input type="range" min="0" max="100" value="50">
+      </label>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  <h4>Input group</h4>
+  <div class="demo">
+    <fieldset class="group">
+      <legend>https://</legend>
+      <input type="url" placeholder="subdomain">
+      <select aria-label="Select a subdomain">
+        <option value="" disabled selected>Select</option>
+        <option>.example.com</option>
+        <option>.example.net</option>
+      </select>
+      <button>Go</button>
+    </fieldset>
+    <fieldset class="group">
+      <input type="text" placeholder="Search">
+      <button>Go</button>
+    </fieldset>
+  </div>
+  <h4>Validation error</h4>
+  <div class="demo">
+    <div data-field="error">
+      <label for="err-input">Email</label>
+      <input type="email" aria-invalid="true" aria-describedby="err-msg" id="err-input" value="invalid-email">
+      <div id="err-msg" class="error" role="status">Please enter a valid email address.</div>
+    </div>
+  </div>
+</section>
+
+<!-- Switch -->
+<section class="component-section" id="switch">
+  <h2>Switch</h2>
+  <p>Toggle switches using checkbox with <code>role="switch"</code>.</p>
+  <div class="demo">
+    <div class="vstack gap-2">
+      <label><input type="checkbox" role="switch"> Notifications</label>
+      <label><input type="checkbox" role="switch" checked> Confabulation</label>
+      <label><input type="checkbox" role="switch" disabled> Disabled off</label>
+      <label><input type="checkbox" role="switch" checked disabled> Disabled on</label>
+    </div>
+  </div>
+</section>
+
+<!-- Table -->
+<section class="component-section" id="table">
+  <h2>Table</h2>
+  <p>Data tables with thead, tbody. Styled automatically.</p>
+  <div class="demo">
+    <div class="table">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Alice Johnson</td>
+            <td>alice@example.com</td>
+            <td>Admin</td>
+            <td><span class="badge success">Active</span></td>
+          </tr>
+          <tr>
+            <td>Bob Smith</td>
+            <td>bob@example.com</td>
+            <td>Editor</td>
+            <td><span class="badge">Active</span></td>
+          </tr>
+          <tr>
+            <td>Carol White</td>
+            <td>carol@example.com</td>
+            <td>Viewer</td>
+            <td><span class="badge secondary">Pending</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- Accordion -->
+<section class="component-section" id="accordion">
+  <h2>Accordion</h2>
+  <p>Collapsible sections using native <code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code>.</p>
+  <div class="demo">
+    <details>
+      <summary>What is Oat</summary>
+      <p>Oat is a minimal, semantic-first UI component library with zero dependencies.</p>
+    </details>
+    <details>
+      <summary>How do I use it</summary>
+      <p>Include the CSS and JS files, then write semantic HTML. Most elements are styled by default.</p>
+    </details>
+    <details>
+      <summary>Is it accessible</summary>
+      <p>Yes! It uses semantic HTML and ARIA attributes. Keyboard navigation works out of the box.</p>
+    </details>
+    <details name="grouped">
+      <summary>This is grouped with the next one</summary>
+      <p>Using the <code>name</code> attribute groups items like radio.</p>
+    </details>
+    <details name="grouped">
+      <summary>This is grouped with the previous one</summary>
+      <p>Using the <code>name</code> attribute groups items like radio.</p>
+    </details>
+  </div>
+</section>
+
+<!-- Tabs -->
+<section class="component-section" id="tabs">
+  <h2>Tabs</h2>
+  <p>Tabbed interface using <code>&lt;ot-tabs&gt;</code> WebComponent.</p>
+  <div class="demo">
+    <ot-tabs>
+      <div role="tablist">
+        <button role="tab">Account</button>
+        <button role="tab">Password</button>
+        <button role="tab">Notifications</button>
+      </div>
+      <div role="tabpanel">
+        <h3>Account Settings</h3>
+        <p>Manage your account information here.</p>
+      </div>
+      <div role="tabpanel">
+        <h3>Password Settings</h3>
+        <p>Change your password here.</p>
+      </div>
+      <div role="tabpanel">
+        <h3>Notification Settings</h3>
+        <p>Configure your notification preferences.</p>
+      </div>
+    </ot-tabs>
+  </div>
+</section>
+
+<!-- Alert -->
+<section class="component-section" id="alert">
+  <h2>Alert</h2>
+  <p>Alert messages using <code>role="alert"</code>.</p>
+  <div class="demo">
+    <div class="vstack gap-4">
+      <div role="alert">
+        <strong>Info</strong> This is a default alert message.
+      </div>
+      <div role="alert" data-variant="success">
+        <strong>Success!</strong> Your changes have been saved.
+      </div>
+      <div role="alert" data-variant="warning">
+        <strong>Warning!</strong> Please review before continuing.
+      </div>
+      <div role="alert" data-variant="error">
+        <strong>Error!</strong> Something went wrong.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Dialog -->
+<section class="component-section" id="dialog">
+  <h2>Dialog</h2>
+  <p>Modal dialogs using native <code>&lt;dialog&gt;</code>.</p>
+  <div class="demo">
+    <div class="hstack">
+      <button commandfor="all-demo-dialog" command="show-modal">Open dialog</button>
+      <button commandfor="all-demo-dialog-form" command="show-modal" class="outline">Open form dialog</button>
+    </div>
+
+    <dialog id="all-demo-dialog" closedby="any">
+      <form method="dialog">
+        <header>
+          <h3>Title</h3>
+          <p>This is a dialog description.</p>
+        </header>
+        <div>
+          <p>Dialog content goes here. You can put any HTML inside.</p>
+          <p>Click outside or press Escape to close.</p>
+        </div>
+        <footer>
+          <button type="button" commandfor="all-demo-dialog" command="close" class="outline">Cancel</button>
+          <button value="confirm">Confirm</button>
+        </footer>
+      </form>
+    </dialog>
+
+    <dialog id="all-demo-dialog-form">
+      <form method="dialog">
+        <header>
+          <h3>Edit form</h3>
+        </header>
+        <div class="vstack">
+          <label>Name <input name="name" required></label>
+          <label>Email <input name="email" type="email"></label>
+        </div>
+        <footer>
+          <button type="button" commandfor="all-demo-dialog-form" command="close" class="outline">Cancel</button>
+          <button value="save">Save</button>
+        </footer>
+      </form>
+    </dialog>
+  </div>
+</section>
+
+<!-- Dropdown -->
+<section class="component-section" id="dropdown">
+  <h2>Dropdown</h2>
+  <p>Dropdown menus using the native popover API with <code>&lt;ot-dropdown&gt;</code>.</p>
+  <div class="demo">
+    <div class="hstack">
+      <ot-dropdown>
+        <button popovertarget="all-demo-menu" class="outline">
+          Options
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6" /></svg>
+        </button>
+        <menu popover id="all-demo-menu">
+          <button role="menuitem">Profile</button>
+          <button role="menuitem">Settings</button>
+          <button role="menuitem">Help</button>
+          <hr>
+          <button role="menuitem">Logout</button>
+        </menu>
+      </ot-dropdown>
+
+      <ot-dropdown>
+        <button popovertarget="all-demo-confirm" class="outline">Confirm popover</button>
+        <article class="card" popover id="all-demo-confirm">
+          <header>
+            <h4>Are you sure?</h4>
+            <p>This action cannot be undone.</p>
+          </header>
+          <br>
+          <footer>
+            <button class="outline small" popovertarget="all-demo-confirm">Cancel</button>
+            <button data-variant="danger" class="small" popovertarget="all-demo-confirm">Delete</button>
+          </footer>
+        </article>
+      </ot-dropdown>
+    </div>
+  </div>
+</section>
+
+<!-- Toast -->
+<section class="component-section" id="toast">
+  <h2>Toast</h2>
+  <p>Notification toasts with placement and stacking.</p>
+  <div class="demo">
+    <div class="hstack" style="flex-wrap: wrap;">
+      <button onclick="ot.toast('Action completed successfully', 'All good', { variant: 'success' })">Success</button>
+      <button onclick="ot.toast('Something went wrong', 'Oops', { variant: 'danger', placement: 'top-left' })" data-variant="danger">Danger</button>
+      <button onclick="ot.toast('Please review this warning', 'Warning', { variant: 'warning', placement: 'bottom-right' })" class="outline">Warning</button>
+      <button onclick="ot.toast('New notification', 'For your attention', { placement: 'top-center' })">Info</button>
+    </div>
+  </div>
+</section>
+
+<!-- Tooltip -->
+<section class="component-section" id="tooltip">
+  <h2>Tooltip</h2>
+  <p>Tooltips using the native <code>title</code> attribute.</p>
+  <div class="demo">
+    <div class="hstack" style="flex-wrap: wrap;">
+      <button title="Save your changes">Hover: Save</button>
+      <button title="Delete this item" data-variant="danger">Hover: Delete</button>
+      <a href="#tooltip" title="View your profile">Hover: Profile</a>
+    </div>
+  </div>
+</section>
+
+<!-- Progress -->
+<section class="component-section" id="progress">
+  <h2>Progress</h2>
+  <p>Progress bars using the native <code>&lt;progress&gt;</code> element.</p>
+  <div class="demo">
+    <div class="vstack gap-4">
+      <progress value="60" max="100"></progress>
+      <progress value="30" max="100"></progress>
+      <progress value="90" max="100"></progress>
+    </div>
+  </div>
+</section>
+
+<!-- Meter -->
+<section class="component-section" id="meter">
+  <h2>Meter</h2>
+  <p>Measurements using the semantic <code>&lt;meter&gt;</code> element.</p>
+  <div class="demo">
+    <div class="vstack gap-4">
+      <meter value="0.8" min="0" max="1" low="0.3" high="0.7" optimum="1"></meter>
+      <meter value="0.5" min="0" max="1" low="0.3" high="0.7" optimum="1"></meter>
+      <meter value="0.2" min="0" max="1" low="0.3" high="0.7" optimum="1"></meter>
+    </div>
+  </div>
+</section>
+
+<!-- Spinner -->
+<section class="component-section" id="spinner">
+  <h2>Spinner</h2>
+  <p>Loading indicators with <code>aria-busy="true"</code>.</p>
+  <div class="demo">
+    <div class="hstack" style="gap: var(--space-8); align-items: center;">
+      <div aria-busy="true" data-spinner="small"></div>
+      <div aria-busy="true"></div>
+      <div aria-busy="true" data-spinner="large"></div>
+      <button aria-busy="true" data-spinner="small" disabled>Loading</button>
+    </div>
+  </div>
+  <h4>Overlay</h4>
+  <div class="demo">
+    <article class="card" aria-busy="true" data-spinner="large overlay">
+      <header>
+        <h3>Card Title</h3>
+        <p>Card description goes here.</p>
+      </header>
+      <p>This is the card content. It can contain any HTML.</p>
+      <footer class="hstack mt-4">
+        <button class="outline">Cancel</button>
+        <button>Save</button>
+      </footer>
+    </article>
+  </div>
+</section>
+
+<!-- Skeleton -->
+<section class="component-section" id="skeleton">
+  <h2>Skeleton</h2>
+  <p>Loading placeholders with shimmer animation.</p>
+  <div class="demo">
+    <div role="status" class="skeleton line"></div>
+    <div role="status" class="skeleton box" style="margin-top: var(--space-4);"></div>
+  </div>
+  <h4>Skeleton card</h4>
+  <div class="demo">
+    <article style="display: flex; gap: var(--space-3); padding: var(--space-6);">
+      <div role="status" class="skeleton box"></div>
+      <div style="flex: 1; display: flex; flex-direction: column; gap: var(--space-1);">
+        <div role="status" class="skeleton line"></div>
+        <div role="status" class="skeleton line" style="width: 60%"></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- Breadcrumb -->
+<section class="component-section" id="breadcrumb">
+  <h2>Breadcrumb</h2>
+  <p>Simple navigation hierarchy using nav and ordered lists.</p>
+  <div class="demo">
+    <nav aria-label="Breadcrumb">
+      <ol class="unstyled hstack" style="font-size: var(--text-7)">
+        <li><a href="#breadcrumb" class="unstyled">Home</a></li>
+        <li aria-hidden="true">/</li>
+        <li><a href="#breadcrumb" class="unstyled">Projects</a></li>
+        <li aria-hidden="true">/</li>
+        <li><a href="#breadcrumb" class="unstyled">Oat Docs</a></li>
+        <li aria-hidden="true">/</li>
+        <li><a href="#breadcrumb" class="unstyled" aria-current="page"><strong>Breadcrumb</strong></a></li>
+      </ol>
+    </nav>
+  </div>
+</section>
+
+<!-- Pagination -->
+<section class="component-section" id="pagination">
+  <h2>Pagination</h2>
+  <p>Pagination nav bars re-using button groups.</p>
+  <div class="demo">
+    <nav aria-label="Pagination">
+      <menu class="buttons">
+        <li><a href="#pagination" class="button outline small">&larr; Previous</a></li>
+        <li><a href="#pagination" class="button outline small">1</a></li>
+        <li><a href="#pagination" class="button outline small">2</a></li>
+        <li><a href="#pagination" class="button small" aria-current="page">3</a></li>
+        <li><a href="#pagination" class="button outline small">4</a></li>
+        <li><a href="#pagination" class="button outline small">5</a></li>
+        <li><a href="#pagination" class="button outline small">Next &rarr;</a></li>
+      </menu>
+    </nav>
+  </div>
+</section>
+
+<!-- Grid -->
+<section class="component-section" id="grid">
+  <h2>Grid</h2>
+  <p>12-column responsive grid using CSS grid.</p>
+  <div class="demo">
+    <div class="container demo-grid">
+      <div class="row">
+        <div class="col-4">col-4</div>
+        <div class="col-4">col-4</div>
+        <div class="col-4">col-4</div>
+      </div>
+      <div class="row">
+        <div class="col-6">col-6</div>
+        <div class="col-6">col-6</div>
+      </div>
+      <div class="row">
+        <div class="col-3">col-3</div>
+        <div class="col-6">col-6</div>
+        <div class="col-3">col-3</div>
+      </div>
+      <div class="row">
+        <div class="col-4 offset-2">col-4 offset-2</div>
+        <div class="col-4">col-4</div>
+      </div>
+      <div class="row">
+        <div class="col-3">col-3</div>
+        <div class="col-4 col-end">col-4 col-end</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Nav -->
+<section class="component-section" id="nav">
+  <h2>Nav</h2>
+  <p>Side navigation with section labels, collapsible groups, and active state via <code>[aria-current]</code>.</p>
+  <div class="demo">
+    <div style="display: grid; grid-template-columns: 14rem 1fr; gap: var(--space-6);">
+      <nav data-nav>
+        <small>Overview</small>
+        <a href="#nav" aria-current="page">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          Dashboard
+        </a>
+        <a href="#nav">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          Users
+          <span class="badge secondary" style="font-size: 0.625rem;">12</span>
+        </a>
+        <a href="#nav">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
+          Projects
+        </a>
+        <small>Settings</small>
+        <details open>
+          <summary>Account</summary>
+          <a href="#nav">Profile</a>
+          <a href="#nav">Billing</a>
+          <a href="#nav">Security</a>
+        </details>
+        <details>
+          <summary>Integrations</summary>
+          <a href="#nav">Slack</a>
+          <a href="#nav">GitHub</a>
+        </details>
+        <hr>
+        <a href="#nav">Help &amp; Support</a>
+      </nav>
+      <div>
+        <p class="text-light">The nav sits in any container — sidebar, card, or standalone. Uses <code>[data-nav]</code> attribute, <code>&lt;small&gt;</code> for section labels, <code>[aria-current]</code> for active state, and native <code>&lt;details&gt;</code> for collapsible groups.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Tag -->
+<section class="component-section" id="tag">
+  <h2>Tag</h2>
+  <p>Interactive tags / chips with optional dismiss button. Like badges, but interactive.</p>
+  <div class="demo">
+    <div class="hstack" style="flex-wrap: wrap;">
+      <span class="tag">Default</span>
+      <span class="tag primary">Primary</span>
+      <span class="tag success">Success</span>
+      <span class="tag warning">Warning</span>
+      <span class="tag danger">Danger</span>
+    </div>
+  </div>
+  <h4>Dismissible</h4>
+  <div class="demo">
+    <div class="hstack" style="flex-wrap: wrap;" id="tag-demo">
+      <span class="tag">React <button aria-label="Remove React">&times;</button></span>
+      <span class="tag">TypeScript <button aria-label="Remove TypeScript">&times;</button></span>
+      <span class="tag success">Published <button aria-label="Remove Published">&times;</button></span>
+      <span class="tag warning">Draft <button aria-label="Remove Draft">&times;</button></span>
+    </div>
+  </div>
+</section>
+
+<!-- Avatar -->
+<section class="component-section" id="avatar">
+  <h2>Avatar</h2>
+  <p>User or entity representation with image or initials fallback.</p>
+  <div class="demo">
+    <div class="hstack" style="align-items: center;">
+      <span class="avatar small">S</span>
+      <span class="avatar">JD</span>
+      <span class="avatar large">AK</span>
+      <span class="avatar"><img src="https://i.pravatar.cc/96?img=1" alt="User"></span>
+      <span class="avatar large"><img src="https://i.pravatar.cc/96?img=5" alt="User"></span>
+    </div>
+  </div>
+  <h4>Avatar group</h4>
+  <div class="demo">
+    <div class="avatar-group">
+      <span class="avatar"><img src="https://i.pravatar.cc/96?img=1" alt="User 1"></span>
+      <span class="avatar"><img src="https://i.pravatar.cc/96?img=2" alt="User 2"></span>
+      <span class="avatar"><img src="https://i.pravatar.cc/96?img=3" alt="User 3"></span>
+      <span class="avatar">+4</span>
+    </div>
+  </div>
+</section>
+
+<!-- Empty State -->
+<section class="component-section" id="empty-state">
+  <h2>Empty State</h2>
+  <p>Placeholder for empty pages, lists, or tables. Uses <code>[data-empty]</code>.</p>
+  <div class="demo">
+    <div data-empty>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 7h-9"/><path d="M14 17H5"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/></svg>
+      <h4>No results found</h4>
+      <p>Try adjusting your search or filters to find what you're looking for.</p>
+      <button class="outline small">Clear filters</button>
+    </div>
+  </div>
+  <div class="demo">
+    <div data-empty>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>
+      <h4>No documents yet</h4>
+      <p>Create your first document to get started.</p>
+      <button>Create document</button>
+    </div>
+  </div>
+</section>
+
+<!-- Command Palette -->
+<section class="component-section" id="command">
+  <h2>Command Palette</h2>
+  <p>Global search and action palette triggered with <code>⌘K</code> / <code>Ctrl+K</code>. Uses <code>&lt;ot-command&gt;</code> WebComponent.</p>
+  <div class="demo">
+    <button onclick="document.querySelector('ot-command').open()" class="outline">
+      Open Command Palette
+      <kbd style="margin-inline-start: var(--space-2); padding: 1px var(--space-2); font-family: var(--font-mono); font-size: var(--text-8); background: var(--muted); border-radius: var(--radius-small);">⌘K</kbd>
+    </button>
+  </div>
+</section>
+
+<ot-command>
+  <dialog id="demo-cmd" closedby="any">
+    <input type="search" placeholder="Type a command...">
+    <div role="listbox">
+      <span>Navigation</span>
+      <button role="option">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        Home
+      </button>
+      <button role="option">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v6m0 6v6m11-7h-6m-6 0H1"/></svg>
+        Dashboard
+      </button>
+      <button role="option">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+        Users
+      </button>
+      <button role="option">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+        Settings
+      </button>
+      <span>Actions</span>
+      <button role="option">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
+        New Project
+        <kbd>⌘N</kbd>
+      </button>
+      <button role="option">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" x2="12" y1="3" y2="15"/></svg>
+        Import Data
+      </button>
+      <button role="option">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+        Export Report
+      </button>
+    </div>
+  </dialog>
+</ot-command>
+
+<!-- Sidebar -->
+<section class="component-section" id="sidebar">
+  <h2>Sidebar</h2>
+  <p>Responsive sidebar layout with <code>data-sidebar-layout</code>.</p>
+  <div class="demo" style="padding: 0; height: 300px; overflow: hidden; position: relative;">
+    <div data-sidebar-layout style="height: 100%;">
+      <aside data-sidebar>
+        <nav>
+          <ul>
+            <li><a href="#sidebar" aria-current="page">Home</a></li>
+            <li><a href="#sidebar">Users</a></li>
+            <li>
+              <details open>
+                <summary>Settings</summary>
+                <ul>
+                  <li><a href="#sidebar">General</a></li>
+                  <li><a href="#sidebar">Security</a></li>
+                  <li><a href="#sidebar">Billing</a></li>
+                </ul>
+              </details>
+            </li>
+          </ul>
+        </nav>
+        <footer>
+          <button class="outline small" style="width: 100%;">Logout</button>
+        </footer>
+      </aside>
+      <main style="padding: var(--space-6);">
+        <p>Main content area. Scrolls with the page body.</p>
+      </main>
+    </div>
+  </div>
+</section>
+
+<footer style="margin-top: var(--space-12); padding: var(--space-6) 0; border-top: 1px solid var(--border);">
+  <small class="text-light">Oat — Ultra-lightweight, zero dependency, semantic HTML/CSS/JS UI library</small>
+</footer>
+
+<script>
+  document.getElementById('tag-demo')?.addEventListener('click', e => {
+    const btn = e.target.closest('.tag > button');
+    if (btn) btn.parentElement.remove();
+  });
+
+  function toggleTheme() {
+    const html = document.documentElement;
+    const current = html.getAttribute('data-theme');
+    const next = current === 'dark' ? 'light' : 'dark';
+    html.style.colorScheme = next;
+    html.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+  }
+</script>
+
+</body>
+</html>

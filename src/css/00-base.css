@@ -124,13 +124,13 @@
   pre {
     font-family: var(--font-mono);
     padding: var(--space-5);
-    background-color: light-dark(rgb(246 246 250 / 0.6), rgb(18 18 24 / 0.6));
-    border: 1px solid var(--border);
+    background-color: light-dark(rgb(246 246 250 / 0.45), rgb(18 18 24 / 0.45));
+    border: 1px solid var(--glass-border);
     border-radius: var(--radius-medium);
     overflow-x: auto;
     margin-block-end: var(--space-4);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
     box-shadow: var(--shadow-small);
 
     code {

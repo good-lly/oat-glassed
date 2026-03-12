@@ -1,11 +1,12 @@
 @layer components {
   details {
-    border: 1px solid var(--border);
+    border: 1px solid var(--glass-border);
     border-radius: var(--radius-medium);
     overflow: hidden;
-    background-color: light-dark(rgb(255 255 255 / 0.4), rgb(255 255 255 / 0.02));
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    background-color: light-dark(rgb(255 255 255 / 0.35), rgb(255 255 255 / 0.02));
+    background-image: var(--glass-highlight);
+    backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
 
     & + details {
       margin-top: -1px;

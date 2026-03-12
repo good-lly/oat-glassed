@@ -23,12 +23,12 @@
     font-size: var(--text-7);
     line-height: 1;
     white-space: nowrap;
-    background: light-dark(rgb(20 20 30 / 0.85), rgb(40 40 55 / 0.9));
+    background: light-dark(rgb(20 20 30 / 0.75), rgb(40 40 55 / 0.8));
     color: #ececf1;
-    border: 1px solid light-dark(rgb(255 255 255 / 0.06), rgb(255 255 255 / 0.1));
+    border: 1px solid light-dark(rgb(255 255 255 / 0.08), rgb(255 255 255 / 0.12));
     border-radius: var(--radius-medium);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
     box-shadow: var(--shadow-medium);
   }
 
@@ -38,7 +38,7 @@
     inset-block-end: calc(100% - 5px);
     transform: translateX(-50%) translateY(4px);
     border: 8px solid transparent;
-    border-top-color: light-dark(rgb(20 20 30 / 0.85), rgb(40 40 55 / 0.9));
+    border-top-color: light-dark(rgb(20 20 30 / 0.75), rgb(40 40 55 / 0.8));
   }
 
   [data-tooltip]:is(:hover, :focus-visible)::before,

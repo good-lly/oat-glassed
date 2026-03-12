@@ -4,21 +4,21 @@
     opacity: 1;
     transform: perspective(1000px) rotateX(0deg) translateZ(0);
     transition:
-      opacity 150ms cubic-bezier(0.4, 0, 0.2, 1),
-      transform 150ms cubic-bezier(0.4, 0, 0.2, 1),
-      overlay 150ms cubic-bezier(0.4, 0, 0.2, 1) allow-discrete,
-      display 150ms cubic-bezier(0.4, 0, 0.2, 1) allow-discrete;
+      opacity 250ms cubic-bezier(0.175, 0.885, 0.32, 1.075),
+      transform 250ms cubic-bezier(0.175, 0.885, 0.32, 1.075),
+      overlay 250ms cubic-bezier(0.175, 0.885, 0.32, 1.075) allow-discrete,
+      display 250ms cubic-bezier(0.175, 0.885, 0.32, 1.075) allow-discrete;
 
     /* Entry - where to animate FROM */
     @starting-style {
       opacity: 0;
-      transform: perspective(1000px) rotateX(-15deg) translateZ(-80px);
+      transform: perspective(1000px) rotateX(-12deg) translateZ(-60px);
     }
 
     /* Exit - where to animate TO when closing */
     &[data-state="closing"] {
       opacity: 0;
-      transform: perspective(1000px) rotateX(-15deg) translateZ(-80px);
+      transform: perspective(1000px) rotateX(-12deg) translateZ(-60px);
     }
 
     &[data-state="closing"]::backdrop {
@@ -29,7 +29,7 @@
   /* Backdrop animation for dialogs */
   dialog::backdrop {
     opacity: 1;
-    transition: opacity 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
     @starting-style {
       opacity: 0;
@@ -39,21 +39,21 @@
   /* Slide-in animation for toasts */
   .animate-slide-in {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateX(0) scale(1);
     transition:
-      opacity 150ms cubic-bezier(0.16, 1, 0.3, 1),
-      transform 150ms cubic-bezier(0.16, 1, 0.3, 1);
+      opacity 300ms cubic-bezier(0.175, 0.885, 0.32, 1.075),
+      transform 300ms cubic-bezier(0.175, 0.885, 0.32, 1.075);
 
     /* Entry - slide in from right */
     @starting-style {
       opacity: 0;
-      transform: translateX(100%);
+      transform: translateX(100%) scale(0.95);
     }
 
     /* Exit - slide out to right */
     &[data-state="closing"] {
       opacity: 0;
-      transform: translateX(100%);
+      transform: translateX(100%) scale(0.95);
     }
   }
 }

@@ -9,25 +9,25 @@
       border: 1px solid var(--glass-border);
       border-radius: var(--radius-medium);
       box-shadow: var(--shadow-large);
-      backdrop-filter: blur(var(--glass-blur));
-      -webkit-backdrop-filter: blur(var(--glass-blur));
+      backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+      -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
       opacity: 0;
-      transform: translateY(-4px);
+      transform: translateY(-6px) scale(0.96);
       transition:
-        opacity 150ms ease-out,
-        transform 150ms ease-out,
-        display 150ms allow-discrete,
-        overlay 150ms allow-discrete;
+        opacity 200ms cubic-bezier(0.175, 0.885, 0.32, 1.075),
+        transform 200ms cubic-bezier(0.175, 0.885, 0.32, 1.075),
+        display 200ms allow-discrete,
+        overlay 200ms allow-discrete;
 
       &:popover-open {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(0) scale(1);
       }
 
       @starting-style {
         &:popover-open {
           opacity: 0;
-          transform: translateY(-4px);
+          transform: translateY(-6px) scale(0.96);
         }
       }
     }
@@ -45,6 +45,7 @@
       background: none;
       border: none;
       border-radius: var(--radius-small);
+      box-shadow: none;
       cursor: pointer;
       transition: background-color var(--transition-fast);
 

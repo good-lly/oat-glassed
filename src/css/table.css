@@ -3,6 +3,11 @@
     min-width: 320px;
     width: 100%;
     overflow-x: auto;
+    border-radius: var(--radius-medium);
+    border: 1px solid var(--glass-border);
+    background-color: light-dark(rgb(255 255 255 / 0.3), rgb(255 255 255 / 0.02));
+    backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
   }
 
   table {
@@ -13,6 +18,7 @@
 
   thead {
     border-bottom: 1px solid var(--border);
+    background-color: light-dark(rgb(255 255 255 / 0.25), rgb(255 255 255 / 0.03));
   }
 
   th, td {
