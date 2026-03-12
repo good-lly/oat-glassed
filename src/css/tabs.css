@@ -9,6 +9,7 @@
     border: 1px solid var(--glass-border);
     backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
     -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+    contain: paint;
   }
 
   [role="tab"] {

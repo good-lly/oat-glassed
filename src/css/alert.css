@@ -12,6 +12,7 @@
     backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
     -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
     box-shadow: var(--shadow-small);
+    contain: paint;
 
     &[data-variant] {
       border: none;

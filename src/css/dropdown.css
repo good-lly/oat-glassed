@@ -11,6 +11,7 @@
       box-shadow: var(--shadow-large);
       backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
       -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+      will-change: transform, opacity;
       opacity: 0;
       transform: translateY(-6px) scale(0.96);
       transition:

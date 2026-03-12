@@ -1,4 +1,4 @@
 +++
-title = "Oat kitchensink dashboard demo"
+title = "Oat Glassed kitchensink dashboard demo"
 template = "demo.html"
 +++

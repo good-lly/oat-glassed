@@ -33,19 +33,19 @@ dist: css js size
 
 css:
 	@mkdir -p dist
-	@cat $(CSS_FILES) > dist/oat.css
-	@npx esbuild dist/oat.css --minify --outfile=dist/oat.min.css
-	@gzip -9 -k -f dist/oat.min.css
-	@cp dist/oat.min.css docs/static/oat.min.css
-	@echo "CSS: $$(wc -c < dist/oat.min.css | tr -d ' ') bytes (minified)"
+	@cat $(CSS_FILES) > dist/oat-glassed.css
+	@npx esbuild dist/oat-glassed.css --minify --outfile=dist/oat-glassed.min.css
+	@gzip -9 -k -f dist/oat-glassed.min.css
+	@cp dist/oat-glassed.min.css docs/static/oat-glassed.min.css
+	@echo "CSS: $$(wc -c < dist/oat-glassed.min.css | tr -d ' ') bytes (minified)"
 
 js:
 	@mkdir -p dist
-	@npx esbuild src/js/index.js --bundle --format=iife --outfile=dist/oat.js
-	@npx esbuild src/js/index.js --bundle --format=iife --minify --outfile=dist/oat.min.js
-	@gzip -9 -k -f dist/oat.min.js
-	@cp dist/oat.min.js docs/static/oat.min.js
-	@echo "JS: $$(wc -c < dist/oat.min.js | tr -d ' ') bytes (minified)"
+	@npx esbuild src/js/index.js --bundle --format=iife --outfile=dist/oat-glassed.js
+	@npx esbuild src/js/index.js --bundle --format=iife --minify --outfile=dist/oat-glassed.min.js
+	@gzip -9 -k -f dist/oat-glassed.min.js
+	@cp dist/oat-glassed.min.js docs/static/oat-glassed.min.js
+	@echo "JS: $$(wc -c < dist/oat-glassed.min.js | tr -d ' ') bytes (minified)"
 
 clean:
 	@rm -rf dist
@@ -53,13 +53,13 @@ clean:
 size:
 	@echo ""
 	@echo "Bundle:"
-	@echo "CSS (src):   $$(wc -c < dist/oat.css | tr -d ' ') bytes"
-	@echo "CSS (min):   $$(wc -c < dist/oat.min.css | tr -d ' ') bytes"
-	@echo "CSS (gzip):  $$(wc -c < dist/oat.min.css.gz | tr -d ' ') bytes"
+	@echo "CSS (src):   $$(wc -c < dist/oat-glassed.css | tr -d ' ') bytes"
+	@echo "CSS (min):   $$(wc -c < dist/oat-glassed.min.css | tr -d ' ') bytes"
+	@echo "CSS (gzip):  $$(wc -c < dist/oat-glassed.min.css.gz | tr -d ' ') bytes"
 	@echo ""
-	@echo "JS (src):    $$(wc -c < dist/oat.js | tr -d ' ') bytes"
-	@echo "JS (min):    $$(wc -c < dist/oat.min.js | tr -d ' ') bytes"
-	@echo "JS (gzip):   $$(wc -c < dist/oat.min.js.gz | tr -d ' ') bytes"
+	@echo "JS (src):    $$(wc -c < dist/oat-glassed.js | tr -d ' ') bytes"
+	@echo "JS (min):    $$(wc -c < dist/oat-glassed.min.js | tr -d ' ') bytes"
+	@echo "JS (gzip):   $$(wc -c < dist/oat-glassed.min.js.gz | tr -d ' ') bytes"
 
 publish: clean dist
 	@cp -r src/css dist/css

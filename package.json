@@ -1,9 +1,9 @@
 {
-  "name": "@jolly-good/oat-glassed",
+  "name": "oat-glassed",
   "version": "version-0.0.0",
   "license": "MIT",
-  "author": "Kailash Nadh",
-  "homepage": "https://oat.ink",
+  "author": "good-lly | Originally created by Kailash Nadh @kailashnadh",
+  "homepage": "https://github.com/good-lly/oat-glassed",
   "description": " Ultra-lightweight, zero dependency, semantic HTML/CSS/JS UI library",
   "repository": {
     "type": "git",
@@ -15,13 +15,13 @@
     "component-library"
   ],
   "files": [
-    "oat.min.css",
-    "oat.min.js",
+    "oat-glassed.min.css",
+    "oat-glassed.min.js",
     "css",
     "js"
   ],
-  "main": "oat.min.js",
-  "style": "oat.min.css",
-  "unpkg": "oat.min.js",
-  "jsdelivr": "oat.min.js"
+  "main": "oat-glassed.min.js",
+  "style": "oat-glassed.min.css",
+  "unpkg": "oat-glassed.min.js",
+  "jsdelivr": "oat-glassed.min.js"
 }

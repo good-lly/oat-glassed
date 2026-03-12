@@ -1,9 +1,9 @@
 # Oat Glassed UI
 
-(Fork of [Oat UI](https://github.com/knadh/oat))
+(Forked [Oat UI](https://github.com/knadh/oat))
 See [CHANGELOG](CHANGELOG.md) for changes and updates.
 
-> Semantic, minimal, zero dependencies. ~8KB CSS and JS.
+> Semantic, minimal, zero dependencies. ~10KB CSS and JS.
 
 Oat Glassed is an ultra-lightweight HTML + CSS, semantic UI component library with zero dependencies. No framework, build, or dev complexity. Just include the tiny CSS and JS files and you are good to go building decent looking web applications with most commonly needed components and elements.
 

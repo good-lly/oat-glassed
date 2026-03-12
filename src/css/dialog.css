@@ -15,6 +15,7 @@
     overflow: hidden;
     backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
     -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+    will-change: transform, opacity, backdrop-filter;
 
     opacity: 0;
     transform: scale(0.92) translateY(8px);

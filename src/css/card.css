@@ -10,5 +10,6 @@
     overflow: hidden;
     backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
     -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+    contain: paint;
   }
 }

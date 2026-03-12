@@ -3,6 +3,7 @@
   .animate-pop-in {
     opacity: 1;
     transform: perspective(1000px) rotateX(0deg) translateZ(0);
+    will-change: transform, opacity;
     transition:
       opacity 250ms cubic-bezier(0.175, 0.885, 0.32, 1.075),
       transform 250ms cubic-bezier(0.175, 0.885, 0.32, 1.075),
@@ -40,6 +41,7 @@
   .animate-slide-in {
     opacity: 1;
     transform: translateX(0) scale(1);
+    will-change: transform, opacity;
     transition:
       opacity 300ms cubic-bezier(0.175, 0.885, 0.32, 1.075),
       transform 300ms cubic-bezier(0.175, 0.885, 0.32, 1.075);

@@ -62,6 +62,7 @@
     box-shadow: var(--shadow-large);
     backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
     -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+    will-change: transform, opacity;
     transition: opacity var(--transition-in), transform var(--transition-in), margin var(--transition-in);
     line-height: 1;
 

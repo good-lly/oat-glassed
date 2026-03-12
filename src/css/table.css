@@ -8,6 +8,7 @@
     background-color: light-dark(rgb(255 255 255 / 0.3), rgb(255 255 255 / 0.02));
     backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
     -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+    contain: paint;
   }
 
   table {

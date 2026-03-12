@@ -1,3 +1,4 @@
+- improved scroll and animation performance: reduced glass-blur (24→18px) and glass-saturate (180→140%), added contain:paint on box-level glass components, will-change hints on fixed/sticky glass and animated elements for GPU compositing
 - added nav.css, tag.css, avatar.css, empty-state.css, command.css to the package
 - added index file to list all elements in the package
 - design changes for more glassy look
