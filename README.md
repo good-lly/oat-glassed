@@ -13,7 +13,7 @@ See live demo and docs at [**https://good-lly.github.io/oat-glassed**](https://g
 
 ---
 
-<img width="739" height="735" alt="image" src="" />
+<img width="739" alt="image" src="https://github.com/good-lly/oat-glassed/blob/main/docs/static/screenshot.png?raw=true" />
 
 ## Installation
 
