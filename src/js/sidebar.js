@@ -10,6 +10,14 @@ document.addEventListener('click', (e) => {
     return;
   }
 
+  // Topnav menu toggle.
+  const topnavToggle = e.target.closest('[data-topnav-toggle]');
+  if (topnavToggle) {
+    const nav = topnavToggle.closest('[data-topnav]');
+    nav?.toggleAttribute('data-topnav-open');
+    return;
+  }
+
   // Dismiss sidebar when clicking outside (when sidebar is not an overlay).
   if (!e.target.closest('[data-sidebar]')) {
     const layout = document.querySelector('[data-sidebar-layout][data-sidebar-open]');
@@ -17,6 +25,14 @@ document.addEventListener('click', (e) => {
     // the @media{} query which could've been picked up here.
     if (layout && window.matchMedia('(max-width: 768px)').matches) {
       layout.removeAttribute('data-sidebar-open');
+    }
+  }
+
+  // Dismiss topnav menu when clicking outside.
+  if (!e.target.closest('[data-topnav]')) {
+    const nav = document.querySelector('[data-topnav][data-topnav-open]');
+    if (nav && window.matchMedia('(max-width: 768px)').matches) {
+      nav.removeAttribute('data-topnav-open');
     }
   }
 });

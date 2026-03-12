@@ -231,10 +231,22 @@
       layout?.toggleAttribute("data-sidebar-open");
       return;
     }
+    const topnavToggle = e.target.closest("[data-topnav-toggle]");
+    if (topnavToggle) {
+      const nav = topnavToggle.closest("[data-topnav]");
+      nav?.toggleAttribute("data-topnav-open");
+      return;
+    }
     if (!e.target.closest("[data-sidebar]")) {
       const layout = document.querySelector("[data-sidebar-layout][data-sidebar-open]");
       if (layout && window.matchMedia("(max-width: 768px)").matches) {
         layout.removeAttribute("data-sidebar-open");
+      }
+    }
+    if (!e.target.closest("[data-topnav]")) {
+      const nav = document.querySelector("[data-topnav][data-topnav-open]");
+      if (nav && window.matchMedia("(max-width: 768px)").matches) {
+        nav.removeAttribute("data-topnav-open");
       }
     }
   });

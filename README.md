@@ -9,7 +9,7 @@
 [![license](https://img.shields.io/npm/l/oat-glassed?color=blue&style=flat-square)](LICENSE)
 [![zero deps](https://img.shields.io/badge/dependencies-0-brightgreen?style=flat-square)](#)
 
-[Live Demo & Docs](https://good-lly.github.io/oat-glassed) &bull; [Changelog](CHANGELOG.md) &bull; [npm](https://www.npmjs.com/package/oat-glassed)
+[Live Demo & Docs](https://good-lly.github.io/oat-glassed) &bull; [Changelog](CHANGELOG.md) &bull; [Contributing](CONTRIBUTING.md) &bull; [npm](https://www.npmjs.com/package/oat-glassed)
 
 <br />
 
@@ -93,7 +93,7 @@ Then just write semantic HTML:
 | **Form** | `<form>`, `<input>`, `<select>`, `<textarea>` | Inputs, checkboxes, radios, selects &mdash; all semantic |
 | **Grid** | `.grid` | Responsive layout system |
 | **Meter** | `<meter>` | Gauge / measurement display |
-| **Nav** | `<nav>` | Navigation bar |
+| **Nav** | `<nav>`, `[data-topnav]` | Side nav and responsive top navbar with mobile hamburger collapse |
 | **Progress** | `<progress>` | Progress bars |
 | **Sidebar** | `.sidebar` | Collapsible sidebar layout |
 | **Skeleton** | `.skeleton` | Loading placeholder animations |
@@ -225,6 +225,27 @@ Build tooling is intentionally minimal &mdash; just `esbuild` via `npx` and `gzi
 - Screen reader tested
 
 <br />
+
+## What's Different from Upstream Oat
+
+Oat Glassed builds on [Oat UI](https://github.com/knadh/oat) with a frosted-glass aesthetic inspired by shadcn defaults and Tailwind conventions, optimised for smooth 60fps rendering &mdash; `--glass-blur` is tuned to 18px, `--glass-saturate` to 140%, glass components use `contain: paint`, and fixed/sticky surfaces carry `will-change` hints for GPU compositing. Five new components are added: **Nav**, **Tag**, **Avatar**, **Empty State**, and **Command Palette**. An `index.js` entry point bundles all modules, the build uses `npx esbuild` instead of a global install, and docs are updated to reflect the Oat Glassed identity.
+
+<br />
+
+## Contributing
+
+Contributions are welcome! Please read the [Contributing Guide](CONTRIBUTING.md) before opening a PR.
+
+- **Bug fixes** &mdash; open an issue first to confirm, then send a PR with screenshots of visual changes.
+- **New features** &mdash; open an issue to discuss before sending a PR. The library aims to stay minimal (~10KB gzipped).
+- **Typos & minor fixes** &mdash; go straight to a PR.
+
+## Support Upstream
+
+Oat Glassed is a fork of [Oat UI](https://github.com/knadh/oat) by [Kailash Nadh](https://github.com/knadh). If you find this project useful, please also consider:
+
+- Starring and contributing to the [upstream Oat repository](https://github.com/knadh/oat)
+- Following the [upstream PR guidelines](https://github.com/knadh/oat/issues/74) when your contribution applies to the base library as well
 
 ## Credits
 

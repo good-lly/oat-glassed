@@ -51,13 +51,17 @@ Set `data-sidebar-layout="always"` to keep the toggle visible on all screen size
 
 ### With top sticky nav
 
-Add `data-topnav` to a header element for a full-width top navigation bar. The sidebar will adjust to sit below it. Inspect the HTML source of this website for a live example.
+Add `data-topnav` to a header element for a full-width top navigation bar. The sidebar will adjust to sit below it. You can also add inline links via `[data-topnav-menu]` that collapse on mobile — see the [Nav](/oat-glassed/components/nav/) docs for details. Inspect the HTML source of this website for a live example.
 
 ```html
 <body data-sidebar-layout>
   <nav data-topnav>
-    <button data-sidebar-toggle aria-label="Toggle menu" class="outline">☰</button>
+    <button data-sidebar-toggle aria-label="Toggle sidebar" class="outline">☰</button>
     <span>App Name</span>
+    <div data-topnav-menu>
+      <a href="#">Docs</a>
+      <a href="#">Help</a>
+    </div>
   </nav>
 
   <aside data-sidebar>

@@ -5,6 +5,26 @@
 {% block content %}
 <link href="{{ config.base_url }}demo.css" rel="stylesheet" />
 
+<!-- Standalone responsive top navigation -->
+<section class="section">
+  <h2>Responsive Top Navigation</h2>
+  <p class="text-light mb-4">A standalone navbar that collapses to a hamburger on mobile. Resize your browser to see it in action.</p>
+
+  <nav data-topnav style="position: relative; border-radius: var(--radius-medium);">
+    <strong>Acme Inc.</strong>
+    <button data-topnav-toggle aria-label="Toggle menu">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <div data-topnav-menu>
+      <a href="#topnav-demo" aria-current="page">Dashboard</a>
+      <a href="#topnav-demo">Products</a>
+      <a href="#topnav-demo">Customers</a>
+      <a href="#topnav-demo">Analytics</a>
+      <a href="#topnav-demo">Settings</a>
+    </div>
+  </nav>
+</section>
+
 <section class="section">
   <div class="hstack justify-between mb-6">
     <div class="hstack">
