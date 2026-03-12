@@ -1,9 +1,20 @@
+name: Build and deploy GH Pages
+
 on:
   workflow_dispatch:
   push:
     branches:
       - master
-name: Build and deploy GH Pages 
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -12,9 +23,9 @@ jobs:
         uses: actions/checkout@v4
 
       - name: setup node
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v4
         with:
-          node-version: '24'
+          node-version: '22'
 
       - name: install esbuild
         run: npm install -g esbuild
@@ -22,12 +33,26 @@ jobs:
       - name: build assets
         run: make dist
 
-      - name: build_and_deploy
-        uses: shalzz/zola-deploy-action@v0.22.1
-        env:
-          # Build docs site from ./docs
-          BUILD_DIR: docs
-          # Target branch
-          PAGES_BRANCH: gh-pages
-          # Or if publishing to the same repo, use the automatic token
-          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: install zola
+        uses: taiki-e/install-action@v2
+        with:
+          tool: zola@0.19.2
+
+      - name: build site
+        run: cd docs && zola build --output-dir ../public
+
+      - name: upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: deploy to github pages
+        id: deployment
+        uses: actions/deploy-pages@v4
