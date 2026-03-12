@@ -15,7 +15,7 @@
       grid-row: 2;
       min-height: 0;
       z-index: 1;
-      background-color: light-dark(rgb(245 245 250 / 0.55), rgb(14 14 18 / 0.55));
+      background-color: light-dark(rgb(248 250 252 / 0.55), rgb(2 6 23 / 0.55));
       backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
       -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
       will-change: transform;
@@ -104,7 +104,7 @@
     align-items: center;
     gap: var(--space-3);
     padding: var(--space-2) var(--space-4);
-    background-color: light-dark(rgb(248 249 251 / 0.55), rgb(12 12 15 / 0.55));
+    background-color: light-dark(rgb(248 250 252 / 0.55), rgb(2 6 23 / 0.55));
     backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
     -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
     will-change: transform;
