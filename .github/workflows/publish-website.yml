@@ -25,10 +25,7 @@ jobs:
       - name: setup node
         uses: actions/setup-node@v4
         with:
-          node-version: '22'
-
-      - name: install esbuild
-        run: npm install -g esbuild
+          node-version: "22"
 
       - name: build assets
         run: make dist

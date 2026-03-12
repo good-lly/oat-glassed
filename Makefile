@@ -30,15 +30,15 @@ dist: css js size
 css:
 	@mkdir -p dist
 	@cat $(CSS_FILES) > dist/oat.css
-	@esbuild dist/oat.css --minify --outfile=dist/oat.min.css
+	@npx esbuild dist/oat.css --minify --outfile=dist/oat.min.css
 	@gzip -9 -k -f dist/oat.min.css
 	@cp dist/oat.min.css docs/static/oat.min.css
 	@echo "CSS: $$(wc -c < dist/oat.min.css | tr -d ' ') bytes (minified)"
 
 js:
 	@mkdir -p dist
-	@esbuild src/js/index.js --bundle --format=iife --outfile=dist/oat.js
-	@esbuild src/js/index.js --bundle --format=iife --minify --outfile=dist/oat.min.js
+	@npx esbuild src/js/index.js --bundle --format=iife --outfile=dist/oat.js
+	@npx esbuild src/js/index.js --bundle --format=iife --minify --outfile=dist/oat.min.js
 	@gzip -9 -k -f dist/oat.min.js
 	@cp dist/oat.min.js docs/static/oat.min.js
 	@echo "JS: $$(wc -c < dist/oat.min.js | tr -d ' ') bytes (minified)"
