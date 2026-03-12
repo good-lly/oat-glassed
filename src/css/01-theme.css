@@ -2,28 +2,44 @@
   :root {
     color-scheme: light dark;
 
-    --background: light-dark(#fff, #09090b);
-    --foreground: light-dark(#09090b, #fafafa);
-    --card: light-dark(#fff, #18181b);
-    --card-foreground: light-dark(#09090b, #fafafa);
-    --primary: light-dark(#574747, #fafafa);
-    --primary-foreground: light-dark(#fafafa, #18181b);
-    --secondary: light-dark(#f4f4f5, #27272a);
-    --secondary-foreground: light-dark(#574747, #fafafa);
-    --muted: light-dark(#f4f4f5, #27272a);
-    --muted-foreground: light-dark(#71717a, #a1a1aa);
-    --faint: light-dark(#fafafa, #1e1e21);
-    --faint-foreground: light-dark(#a1a1aa, #71717a);
-    --accent: light-dark(#f4f4f5, #27272a);
+    /* Surface & text */
+    --background: light-dark(#f8f9fb, #0c0c0f);
+    --foreground: light-dark(#111118, #ececf1);
+    --card: light-dark(rgb(255 255 255 / 0.72), rgb(24 24 30 / 0.65));
+    --card-foreground: light-dark(#111118, #ececf1);
+    --primary: light-dark(#4a3f5f, #e8e4f0);
+    --primary-foreground: light-dark(#fafafa, #1a1725);
+    --secondary: light-dark(rgb(240 240 245 / 0.7), rgb(40 40 50 / 0.5));
+    --secondary-foreground: light-dark(#4a3f5f, #e8e4f0);
+    --muted: light-dark(rgb(240 240 245 / 0.6), rgb(38 38 46 / 0.5));
+    --muted-foreground: light-dark(#6e6e80, #9494a8);
+    --faint: light-dark(rgb(246 246 250 / 0.5), rgb(22 22 28 / 0.4));
+    --faint-foreground: light-dark(#9494a8, #6e6e80);
+    --accent: light-dark(rgb(238 238 245 / 0.7), rgb(48 48 58 / 0.5));
+
+    /* Semantic */
     --danger: light-dark(#d32f2f, #f4807b);
-    --danger-foreground: light-dark(#fafafa, #18181b);
-    --success: light-dark(#008032, #6cc070);
-    --success-foreground: light-dark(#fafafa, #18181b);
-    --warning: light-dark(#a65b00, #f0a030);
-    --warning-foreground: #09090b;
-    --border: light-dark(#d4d4d8, #52525b);
-    --input: light-dark(#d4d4d8, #52525b);
-    --ring: light-dark(#574747, #d4d4d8);
+    --danger-foreground: light-dark(#fafafa, #1a1725);
+    --success: light-dark(#1a8a45, #6cc070);
+    --success-foreground: light-dark(#fafafa, #1a1725);
+    --warning: light-dark(#b06800, #f0a030);
+    --warning-foreground: #111118;
+
+    /* Borders & rings */
+    --border: light-dark(rgb(0 0 0 / 0.08), rgb(255 255 255 / 0.08));
+    --input: light-dark(rgb(0 0 0 / 0.1), rgb(255 255 255 / 0.1));
+    --ring: light-dark(#4a3f5f, #c8c4d4);
+
+    /* Glass */
+    --glass-blur: 16px;
+    --glass-border: light-dark(
+      rgb(255 255 255 / 0.5),
+      rgb(255 255 255 / 0.06)
+    );
+    --glass-highlight: light-dark(
+      linear-gradient(135deg, rgb(255 255 255 / 0.5) 0%, rgb(255 255 255 / 0) 50%),
+      linear-gradient(135deg, rgb(255 255 255 / 0.06) 0%, rgb(255 255 255 / 0) 50%)
+    );
 
     /* ==================== */
     --space-1: 0.25rem;
@@ -39,15 +55,15 @@
     --space-16: 4rem;
     --space-18: 4.5rem;
 
-    --radius-small: 0.125rem;
-    --radius-medium: 0.375rem;
-    --radius-large: 0.75rem;
+    --radius-small: 0.25rem;
+    --radius-medium: 0.5rem;
+    --radius-large: 1rem;
     --radius-full: 9999px;
 
     --bar-height: 0.5rem;
 
-    --font-sans: system-ui, sans-serif;
-    --font-mono: ui-monospace, Consolas, monospace;
+    --font-sans: system-ui, -apple-system, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", Consolas, monospace;
 
     --text-1: clamp(1.75rem, 1.5rem + 1.1vw, 2.25rem);
     --text-2: clamp(1.5rem, 1.3rem + 0.8vw, 1.875rem);
@@ -59,16 +75,29 @@
     --text-8: 0.75rem;
     --text-regular: var(--text-6);
 
-    --leading-normal: 1.5;
+    --leading-normal: 1.6;
 
     --font-normal: 400;
     --font-medium: 500;
     --font-semibold: 600;
     --font-bold: 600;
 
-    --shadow-small: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-    --shadow-medium: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-    --shadow-large: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-small: light-dark(
+      0 1px 2px rgb(0 0 0 / 0.04),
+      0 1px 2px rgb(0 0 0 / 0.3)
+    );
+    --shadow-medium: light-dark(
+      0 2px 8px -2px rgb(0 0 0 / 0.08), 0 1px 2px rgb(0 0 0 / 0.04),
+      0 2px 8px -2px rgb(0 0 0 / 0.4), 0 1px 2px rgb(0 0 0 / 0.3)
+    );
+    --shadow-large: light-dark(
+      0 8px 24px -4px rgb(0 0 0 / 0.08), 0 2px 6px -2px rgb(0 0 0 / 0.04),
+      0 8px 24px -4px rgb(0 0 0 / 0.5), 0 2px 6px -2px rgb(0 0 0 / 0.3)
+    );
+    --shadow-glow: light-dark(
+      0 0 0 1px rgb(0 0 0 / 0.03), 0 2px 12px -2px rgb(0 0 0 / 0.06),
+      0 0 0 1px rgb(255 255 255 / 0.04), 0 2px 16px -2px rgb(0 0 0 / 0.5)
+    );
 
     --transition-fast: 120ms cubic-bezier(0.4, 0, 0.2, 1);
     --transition: 200ms cubic-bezier(0.4, 0, 0.2, 1);

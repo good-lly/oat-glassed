@@ -7,7 +7,7 @@
 
     margin-block-end: var(--space-3);
     background: var(--muted);
-    border-radius: var(--radius-medium);
+    border-radius: var(--radius-small);
     animation: anim 2s infinite;
     background-size: 200% 100%;
     background-image: linear-gradient(

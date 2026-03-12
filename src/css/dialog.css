@@ -8,46 +8,57 @@
     margin: auto;
     padding: 0;
     background-color: var(--card);
-    border: 1px solid var(--border);
+    background-image: var(--glass-highlight);
+    border: 1px solid var(--glass-border);
     border-radius: var(--radius-large);
     box-shadow: var(--shadow-large);
     overflow: hidden;
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
 
     opacity: 0;
-    transform: scale(0.95);
+    transform: scale(0.96) translateY(4px);
     transition:
-      opacity 150ms ease,
-      transform 150ms ease,
-      overlay 150ms ease allow-discrete,
-      display 150ms ease allow-discrete;
+      opacity 200ms ease,
+      transform 200ms ease,
+      overlay 200ms ease allow-discrete,
+      display 200ms ease allow-discrete;
 
     &[open] {
       opacity: 1;
-      transform: scale(1);
+      transform: scale(1) translateY(0);
     }
 
     @starting-style {
       &[open] {
         opacity: 0;
-        transform: scale(0.95);
+        transform: scale(0.96) translateY(4px);
       }
     }
 
     &::backdrop {
       background-color: rgb(0 0 0 / 0);
+      backdrop-filter: blur(0px);
+      -webkit-backdrop-filter: blur(0px);
       transition:
-        background-color 150ms ease,
-        overlay 150ms ease allow-discrete,
-        display 150ms ease allow-discrete;
+        background-color 200ms ease,
+        backdrop-filter 200ms ease,
+        -webkit-backdrop-filter 200ms ease,
+        overlay 200ms ease allow-discrete,
+        display 200ms ease allow-discrete;
     }
 
     &[open]::backdrop {
-      background-color: rgb(0 0 0 / 0.5);
+      background-color: light-dark(rgb(0 0 0 / 0.25), rgb(0 0 0 / 0.5));
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
     }
 
     @starting-style {
       &[open]::backdrop {
         background-color: rgb(0 0 0 / 0);
+        backdrop-filter: blur(0px);
+        -webkit-backdrop-filter: blur(0px);
       }
     }
 

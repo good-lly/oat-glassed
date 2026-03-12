@@ -54,11 +54,14 @@
     min-width: 20rem;
     pointer-events: auto;
     background-color: var(--card);
-    border: 1px solid var(--border);
+    background-image: var(--glass-highlight);
+    border: 1px solid var(--glass-border);
     border-inline-start-width: var(--space-1);
     border-inline-start-style: solid;
     border-radius: var(--radius-medium);
-    box-shadow: var(--shadow-small);
+    box-shadow: var(--shadow-large);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
     transition: opacity var(--transition-in), transform var(--transition-in), margin var(--transition-in);
     line-height: 1;
 

@@ -3,12 +3,14 @@
     [popover] {
       position: fixed;
       margin: 0;
-      /* padding: var(--space-1); */
       min-width: 12rem;
-      background-color: var(--background);
-      border: 1px solid var(--border);
+      background-color: var(--card);
+      background-image: var(--glass-highlight);
+      border: 1px solid var(--glass-border);
       border-radius: var(--radius-medium);
-      box-shadow: var(--shadow-medium);
+      box-shadow: var(--shadow-large);
+      backdrop-filter: blur(var(--glass-blur));
+      -webkit-backdrop-filter: blur(var(--glass-blur));
       opacity: 0;
       transform: translateY(-4px);
       transition:
@@ -44,6 +46,7 @@
       border: none;
       border-radius: var(--radius-small);
       cursor: pointer;
+      transition: background-color var(--transition-fast);
 
       &:hover, &:focus {
         background-color: var(--accent);

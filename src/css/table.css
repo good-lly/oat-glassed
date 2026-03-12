@@ -1,5 +1,4 @@
 @layer base {
-  /* Container to get horizontal scroll on small screens. */
   .table {
     min-width: 320px;
     width: 100%;
@@ -21,14 +20,17 @@
   }
 
   th {
-    padding: var(--space-3) var(--space-2);
+    padding: var(--space-3) var(--space-3);
     text-align: start;
     font-weight: var(--font-medium);
     color: var(--muted-foreground);
+    font-size: var(--text-8);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
   }
 
   td {
-    padding: var(--space-3) var(--space-2);
+    padding: var(--space-3);
   }
 
   tbody tr {
@@ -40,7 +42,7 @@
     }
 
     &:hover {
-      background-color: rgb(from var(--muted) r g b / 0.5);
+      background-color: var(--accent);
     }
   }
 }

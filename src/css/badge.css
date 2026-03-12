@@ -10,10 +10,14 @@
     background-color: var(--primary);
     color: var(--primary-foreground);
     border-radius: var(--radius-full);
+    border: 1px solid rgb(from #fff r g b / 0.1);
 
     &.secondary {
       background-color: var(--secondary);
       color: var(--secondary-foreground);
+      border-color: var(--glass-border);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
     }
 
     &.outline {
@@ -24,25 +28,28 @@
 
     &.success {
       color: var(--success);
+      border-color: light-dark(rgb(from var(--success) r g b / 0.15), rgb(from var(--success) r g b / 0.2));
       background-color: light-dark(
-        color-mix(in srgb, var(--success) 10%, transparent),
-        color-mix(in srgb, var(--success) 30%, transparent)
+        color-mix(in srgb, var(--success) 8%, rgb(255 255 255 / 0.4)),
+        color-mix(in srgb, var(--success) 15%, rgb(0 0 0 / 0.3))
       );
     }
 
     &.warning {
       color: var(--warning);
+      border-color: light-dark(rgb(from var(--warning) r g b / 0.15), rgb(from var(--warning) r g b / 0.2));
       background-color: light-dark(
-        color-mix(in srgb, var(--warning) 10%, transparent),
-        color-mix(in srgb, var(--warning) 30%, transparent)
+        color-mix(in srgb, var(--warning) 8%, rgb(255 255 255 / 0.4)),
+        color-mix(in srgb, var(--warning) 15%, rgb(0 0 0 / 0.3))
       );
     }
 
     &.danger {
       color: var(--danger);
+      border-color: light-dark(rgb(from var(--danger) r g b / 0.15), rgb(from var(--danger) r g b / 0.2));
       background-color: light-dark(
-        color-mix(in srgb, var(--danger) 10%, transparent),
-        color-mix(in srgb, var(--danger) 30%, transparent)
+        color-mix(in srgb, var(--danger) 8%, rgb(255 255 255 / 0.4)),
+        color-mix(in srgb, var(--danger) 15%, rgb(0 0 0 / 0.3))
       );
     }
   }

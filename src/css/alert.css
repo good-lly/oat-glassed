@@ -4,10 +4,12 @@
     display: flex;
     gap: var(--space-3);
     padding: var(--space-4) var(--space-6);
-    background-color: var(--background);
+    background-color: light-dark(rgb(255 255 255 / 0.5), rgb(255 255 255 / 0.03));
     border: 1px solid var(--border);
     border-radius: var(--radius-medium);
     font-size: var(--text-7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 
     &[data-variant] {
       border: none;
@@ -17,8 +19,12 @@
     &[data-variant="danger"] {
       color: var(--danger);
       background-color: light-dark(
-        color-mix(in srgb, var(--danger) 8%, transparent),
-        color-mix(in srgb, var(--danger) 20%, transparent)
+        color-mix(in srgb, var(--danger) 6%, rgb(255 255 255 / 0.4)),
+        color-mix(in srgb, var(--danger) 12%, rgb(0 0 0 / 0.3))
+      );
+      border: 1px solid light-dark(
+        rgb(from var(--danger) r g b / 0.15),
+        rgb(from var(--danger) r g b / 0.2)
       );
 
       & a {
@@ -29,8 +35,12 @@
     &[data-variant="success"] {
       color: var(--success);
       background-color: light-dark(
-        color-mix(in srgb, var(--success) 8%, transparent),
-        color-mix(in srgb, var(--success) 20%, transparent)
+        color-mix(in srgb, var(--success) 6%, rgb(255 255 255 / 0.4)),
+        color-mix(in srgb, var(--success) 12%, rgb(0 0 0 / 0.3))
+      );
+      border: 1px solid light-dark(
+        rgb(from var(--success) r g b / 0.15),
+        rgb(from var(--success) r g b / 0.2)
       );
 
       & a {
@@ -41,8 +51,12 @@
     &[data-variant="warning"] {
       color: var(--warning);
       background-color: light-dark(
-        color-mix(in srgb, var(--warning) 8%, transparent),
-        color-mix(in srgb, var(--warning) 20%, transparent)
+        color-mix(in srgb, var(--warning) 6%, rgb(255 255 255 / 0.4)),
+        color-mix(in srgb, var(--warning) 12%, rgb(0 0 0 / 0.3))
+      );
+      border: 1px solid light-dark(
+        rgb(from var(--warning) r g b / 0.15),
+        rgb(from var(--warning) r g b / 0.2)
       );
 
       & a {

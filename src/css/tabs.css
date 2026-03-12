@@ -6,6 +6,7 @@
     padding: var(--space-1);
     background-color: var(--muted);
     border-radius: var(--radius-medium);
+    border: 1px solid var(--border);
   }
 
   [role="tab"] {
@@ -17,19 +18,22 @@
     font-weight: var(--font-medium);
     white-space: nowrap;
     background-color: transparent;
-    color: var(--foreground);
+    color: var(--muted-foreground);
     border: none;
     border-radius: calc(var(--radius-medium) - 2px);
     cursor: pointer;
-    transition: background-color var(--transition-fast), color var(--transition-fast);
+    transition: background-color var(--transition-fast), color var(--transition-fast), box-shadow var(--transition-fast);
 
     &:hover {
-      color: var(--muted-foreground);
+      color: var(--foreground);
     }
 
     &[aria-selected="true"] {
-      background-color: var(--background);
+      background-color: light-dark(rgb(255 255 255 / 0.85), rgb(255 255 255 / 0.08));
+      color: var(--foreground);
       box-shadow: var(--shadow-small);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
     }
   }
 

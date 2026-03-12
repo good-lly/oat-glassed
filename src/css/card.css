@@ -1,11 +1,14 @@
 @layer components {
   .card {
     background-color: var(--card);
+    background-image: var(--glass-highlight);
     color: var(--card-foreground);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-medium);
-    box-shadow: var(--shadow-small);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-large);
+    box-shadow: var(--shadow-glow);
     padding: var(--space-6);
     overflow: hidden;
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
   }
 }

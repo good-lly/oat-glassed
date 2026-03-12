@@ -1,6 +1,6 @@
 @layer base {
   :is(button, [type=submit], [type=reset], [type=button], a.button), ::file-selector-button {
-    --_hov: color-mix(in srgb, var(--primary), white 25%);
+    --_hov: color-mix(in srgb, var(--primary), white 20%);
 
     display: inline-flex;
     align-items: center;
@@ -15,9 +15,11 @@
     background-color: var(--primary);
     color: var(--primary-foreground);
     border-radius: var(--radius-medium);
-    border: 1px solid;
-    border-color: rgb(from #fff r g b / 0.15) rgb(from #000 r g b / 0.2) rgb(from #000 r g b / 0.2) rgb(from #fff r g b / 0.15);
-    transition: background-color var(--transition-fast), opacity var(--transition-fast), transform var(--transition-fast);
+    border: 1px solid rgb(from #fff r g b / 0.15);
+    box-shadow:
+      inset 0 1px 0 rgb(255 255 255 / 0.1),
+      0 1px 2px rgb(0 0 0 / 0.1);
+    transition: background-color var(--transition-fast), opacity var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
 
     &:not(:disabled) {
       cursor: pointer;
@@ -25,21 +27,30 @@
 
     &:hover:not(:disabled) {
       background-color: var(--_hov);
+      box-shadow:
+        inset 0 1px 0 rgb(255 255 255 / 0.15),
+        0 2px 8px rgb(0 0 0 / 0.12);
     }
 
     &:active:not(:disabled) {
-      transform: translate(1px, 1px);
+      transform: translateY(1px);
+      box-shadow: inset 0 1px 2px rgb(0 0 0 / 0.1);
     }
 
     &[data-variant="secondary"] {
-      --_hov: color-mix(in srgb, var(--secondary), black 10%);
+      --_hov: color-mix(in srgb, var(--secondary), black 5%);
       background-color: var(--secondary);
       color: var(--secondary-foreground);
-      border-color: rgb(from #fff r g b / 0.5) rgb(from #000 r g b / 0.1) rgb(from #000 r g b / 0.1) rgb(from #fff r g b / 0.5);
+      border-color: var(--glass-border);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      box-shadow:
+        inset 0 1px 0 rgb(255 255 255 / 0.06),
+        var(--shadow-small);
     }
 
     &[data-variant="danger"] {
-      --_hov: color-mix(in srgb, var(--danger), black 15%);
+      --_hov: color-mix(in srgb, var(--danger), black 12%);
       background-color: var(--danger);
       color: var(--danger-foreground);
     }
@@ -48,6 +59,14 @@
       --_hov: var(--accent);
       background-color: transparent;
       color: var(--foreground);
+      box-shadow: none;
+      border-color: transparent;
+
+      &:hover:not(:disabled) {
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        box-shadow: var(--shadow-small);
+      }
 
       &[data-variant="danger"] {
         --_hov: color-mix(in srgb, var(--danger), transparent 90%);
@@ -68,12 +87,11 @@
       }
 
       &[data-variant="secondary"] {
-        border-color: var(--secondary);
+        border-color: var(--border);
       }
     }
 
     &.ghost {
-      /* Same as .outline but no border. */
       border-color: transparent;
     }
 
@@ -108,7 +126,6 @@
     border: 1px solid var(--border);
   }
   ::file-selector-button:hover {
-    /* pseudoelement:hover can't be nested and has to be a separate block. */
     background-color: var(--accent);
   }
 }
@@ -119,7 +136,6 @@
     padding-inline-start: 0;
     display: inline-flex;
 
-    /* In menu.buttons, <li> children are expected to have just one child, which is a button/or a.button */
     & > li {
       &:first-child > * {
         border-start-start-radius: var(--radius-medium);
@@ -136,7 +152,7 @@
       }
 
       &:not(:last-child) > * {
-        border-inline-end: 1px solid rgb(from var(--primary-foreground) r g b / 0.2);
+        border-inline-end: 1px solid rgb(from var(--primary-foreground) r g b / 0.15);
       }
     }
   }

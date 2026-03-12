@@ -15,9 +15,10 @@
       grid-row: 2;
       min-height: 0;
       z-index: 1;
-      background-color: var(--background);
+      background-color: light-dark(rgb(245 245 250 / 0.7), rgb(14 14 18 / 0.7));
+      backdrop-filter: blur(var(--glass-blur));
+      -webkit-backdrop-filter: blur(var(--glass-blur));
       border-inline-end: 1px solid var(--border);
-      box-shadow: var(--shadow-medium);
       display: flex;
       flex-direction: column;
 
@@ -67,6 +68,8 @@
         details {
           border: none;
           overflow: visible;
+          background: none;
+          backdrop-filter: none;
 
           & + details { margin-top: 0; }
           &[open] summary { border-bottom: none; }
@@ -100,10 +103,11 @@
     align-items: center;
     gap: var(--space-3);
     padding: var(--space-2) var(--space-4);
-    background-color: var(--background);
+    background-color: light-dark(rgb(248 249 251 / 0.75), rgb(12 12 15 / 0.75));
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
     border-bottom: 1px solid var(--border);
-    box-shadow: var(--shadow-small);
-    
+
     a {
       text-decoration: none;
     }

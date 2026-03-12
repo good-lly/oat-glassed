@@ -23,9 +23,13 @@
     font-size: var(--text-7);
     line-height: 1;
     white-space: nowrap;
-    background: var(--foreground);
-    color: var(--background);
+    background: light-dark(rgb(20 20 30 / 0.85), rgb(40 40 55 / 0.9));
+    color: #ececf1;
+    border: 1px solid light-dark(rgb(255 255 255 / 0.06), rgb(255 255 255 / 0.1));
     border-radius: var(--radius-medium);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: var(--shadow-medium);
   }
 
   /* Arrow */
@@ -34,7 +38,7 @@
     inset-block-end: calc(100% - 5px);
     transform: translateX(-50%) translateY(4px);
     border: 8px solid transparent;
-    border-top-color: var(--foreground);
+    border-top-color: light-dark(rgb(20 20 30 / 0.85), rgb(40 40 55 / 0.9));
   }
 
   [data-tooltip]:is(:hover, :focus-visible)::before,
