@@ -50,7 +50,7 @@ Then include them in your project:
 
 ## Basic usage
 
-Oat styles semantic HTML elements by default. No classes needed for basic styling:
+Oat Glassed styles semantic HTML elements by default. No classes needed for basic styling:
 
 ```html
 <!DOCTYPE html>
@@ -80,5 +80,5 @@ Oat styles semantic HTML elements by default. No classes needed for basic stylin
 
 ### Running
 - Clone the [oat-glassed repo](https://github.com/good-lly/oat-glassed)
-- `cd docs` and run `zola serve` to access the docs/demo site at http://localhost:1111
+- `cd docs` and run `zola serve` to access the docs/demo site at `http://localhost:1111`
 - After changing any CSS or JS files, run `make dist`. The demo site auto-updates with the changes.

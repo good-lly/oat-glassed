@@ -1,0 +1,148 @@
+@layer theme {
+  :root {
+    color-scheme: light dark;
+
+    /* Surface & text — Tailwind gray */
+    --background: light-dark(#ffffff, #030712);
+    --foreground: light-dark(#111827, #f9fafb);
+    --card: light-dark(rgb(255 255 255 / 0.55), rgb(17 24 39 / 0.48));
+    --card-foreground: light-dark(#111827, #f9fafb);
+    --primary: light-dark(#111827, #f9fafb);
+    --primary-foreground: light-dark(#ffffff, #111827);
+    --secondary: light-dark(rgb(243 244 246 / 0.55), rgb(31 41 55 / 0.4));
+    --secondary-foreground: light-dark(#1f2937, #f3f4f6);
+    --muted: light-dark(rgb(243 244 246 / 0.45), rgb(31 41 55 / 0.4));
+    --muted-foreground: light-dark(#6b7280, #9ca3af);
+    --faint: light-dark(rgb(249 250 251 / 0.35), rgb(17 24 39 / 0.3));
+    --faint-foreground: light-dark(#9ca3af, #6b7280);
+    --accent: light-dark(rgb(243 244 246 / 0.55), rgb(31 41 55 / 0.4));
+    --link: light-dark(#0284c7, #7dd3fc);
+
+    /* Semantic — Tailwind red/emerald/amber */
+    --danger: light-dark(#ef4444, #f87171);
+    --danger-foreground: light-dark(#ffffff, #111827);
+    --success: light-dark(#10b981, #34d399);
+    --success-foreground: light-dark(#ffffff, #111827);
+    --warning: light-dark(#f59e0b, #fbbf24);
+    --warning-foreground: #111827;
+
+    /* Borders & rings */
+    --border: light-dark(rgb(0 0 0 / 0.08), rgb(255 255 255 / 0.08));
+    --input: light-dark(rgb(0 0 0 / 0.1), rgb(255 255 255 / 0.1));
+    --ring: light-dark(#111827, #f9fafb);
+
+    /* Glass — Tier 1 (real blur on nav, sidebar, dialog only) */
+    --glass-blur: 12px;
+    --glass-saturate: 120%;
+    --glass-border: light-dark(
+      rgb(255 255 255 / 0.65),
+      rgb(255 255 255 / 0.09)
+    );
+    --glass-highlight: light-dark(
+      linear-gradient(
+        135deg,
+        rgb(255 255 255 / 0.7) 0%,
+        rgb(255 255 255 / 0.15) 40%,
+        rgb(255 255 255 / 0) 60%
+      ),
+      linear-gradient(
+        135deg,
+        rgb(255 255 255 / 0.1) 0%,
+        rgb(255 255 255 / 0.03) 40%,
+        rgb(255 255 255 / 0) 60%
+      )
+    );
+    /* Faux glass edge — Tier 2 (inset highlights simulate glass reflection) */
+    --glass-edge: light-dark(
+      inset 0 0 0 1px rgb(255 255 255 / 0.12), inset 0 1px 0 rgb(255 255 255 / 0.15), 0 8px 32px rgb(0 0 0 / 0.08),
+      inset 0 0 0 1px rgb(255 255 255 / 0.08), inset 0 1px 0 rgb(255 255 255 / 0.1), 0 8px 32px rgb(0 0 0 / 0.25)
+    );
+
+    /* ==================== */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.25rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-10: 2.5rem;
+    --space-12: 3rem;
+    --space-14: 3.5rem;
+    --space-16: 4rem;
+    --space-18: 4.5rem;
+
+    --radius-small: 0.25rem;
+    --radius-medium: 0.5rem;
+    --radius-large: 1.25rem;
+    --radius-full: 9999px;
+
+    --bar-height: 0.5rem;
+
+    --font-sans: system-ui, -apple-system, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", Consolas, monospace;
+
+    --text-1: clamp(1.75rem, 1.5rem + 1.1vw, 2.25rem);
+    --text-2: clamp(1.5rem, 1.3rem + 0.8vw, 1.875rem);
+    --text-3: clamp(1.25rem, 1.1rem + 0.5vw, 1.5rem);
+    --text-4: clamp(1.125rem, 1.05rem + 0.3vw, 1.25rem);
+    --text-5: 1.125rem;
+    --text-6: 1rem;
+    --text-7: 0.875rem;
+    --text-8: 0.75rem;
+    --text-regular: var(--text-6);
+
+    --leading-normal: 1.6;
+
+    --font-normal: 400;
+    --font-medium: 500;
+    --font-semibold: 600;
+    --font-bold: 600;
+
+    --shadow-small: light-dark(
+      0 1px 4px rgb(0 0 0 / 0.03), 0 0.5px 1px rgb(0 0 0 / 0.02),
+      0 1px 4px rgb(0 0 0 / 0.2), 0 0.5px 1px rgb(0 0 0 / 0.15)
+    );
+    --shadow-medium: light-dark(
+      0 4px 20px -4px rgb(0 0 0 / 0.06), 0 1px 4px rgb(0 0 0 / 0.03),
+      0 4px 20px -4px rgb(0 0 0 / 0.35), 0 1px 4px rgb(0 0 0 / 0.2)
+    );
+    --shadow-large: light-dark(
+      0 16px 48px -8px rgb(0 0 0 / 0.07), 0 4px 16px -4px rgb(0 0 0 / 0.03),
+      0 16px 48px -8px rgb(0 0 0 / 0.45), 0 4px 16px -4px rgb(0 0 0 / 0.2)
+    );
+    --shadow-glow: light-dark(
+      0 0 0 0.5px rgb(0 0 0 / 0.02), 0 4px 24px -4px rgb(0 0 0 / 0.05),
+      0 0 0 0.5px rgb(255 255 255 / 0.05), 0 4px 28px -4px rgb(0 0 0 / 0.4)
+    );
+
+    --transition-fast: 120ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: 500ms cubic-bezier(0.175, 0.885, 0.32, 1.1);
+
+    --z-dropdown: 50;
+    --z-modal: 200;
+  }
+
+  @media (prefers-reduced-transparency: reduce) {
+    :root {
+      --glass-blur: 0px;
+      --glass-saturate: 100%;
+      --card: light-dark(rgb(243 244 246 / 0.95), rgb(17 24 39 / 0.95));
+      --secondary: light-dark(rgb(229 231 235 / 0.95), rgb(31 41 55 / 0.92));
+      --muted: light-dark(rgb(229 231 235 / 0.92), rgb(31 41 55 / 0.88));
+      --faint: light-dark(rgb(243 244 246 / 0.9), rgb(17 24 39 / 0.85));
+      --accent: light-dark(rgb(229 231 235 / 0.95), rgb(31 41 55 / 0.92));
+      --glass-highlight: none;
+      --glass-edge: none;
+    }
+
+    *,
+    *::before,
+    *::after,
+    *::backdrop {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+    }
+  }
+}

@@ -1,0 +1,54 @@
+@layer base {
+  .table {
+    min-width: 320px;
+    width: 100%;
+    overflow-x: auto;
+    border-radius: var(--radius-medium);
+    border: 1px solid var(--glass-border);
+    background-color: light-dark(rgb(255 255 255 / 0.3), rgb(255 255 255 / 0.02));
+    box-shadow: var(--glass-edge);
+    contain: paint;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: var(--text-7);
+  }
+
+  thead {
+    border-bottom: 1px solid var(--border);
+    background-color: light-dark(rgb(255 255 255 / 0.25), rgb(255 255 255 / 0.03));
+  }
+
+  th, td {
+    overflow-wrap: break-word;
+  }
+
+  th {
+    padding: var(--space-3) var(--space-3);
+    text-align: start;
+    font-weight: var(--font-medium);
+    color: var(--muted-foreground);
+    font-size: var(--text-8);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  td {
+    padding: var(--space-3);
+  }
+
+  tbody tr {
+    border-bottom: 1px solid var(--border);
+    transition: background-color var(--transition-fast);
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &:hover {
+      background-color: var(--accent);
+    }
+  }
+}

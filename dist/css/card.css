@@ -9,13 +9,5 @@
     padding: var(--space-6);
     overflow: hidden;
     contain: paint;
-
-    > * + * {
-      margin-block-start: var(--space-4);
-    }
-
-    > header > * + * {
-      margin-block-start: var(--space-2);
-    }
   }
 }

@@ -1,13 +1,13 @@
 +++
 title = "Recipes"
 weight = 172
-description = "Composable UI recipes using existing Oat components."
+description = "Composable UI recipes using existing Oat Glassed components."
 
 [extra]
 webcomponent = true
 +++
 
-Examples for various composable widgets using Oat components.
+Examples for various composable widgets using Oat Glassed components.
 
 --------
 

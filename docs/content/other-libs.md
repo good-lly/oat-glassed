@@ -3,7 +3,7 @@ title = "Other useful libs"
 description = "Useful zero-dependency libs"
 +++
 
-Zero-dependency, useful JS libs that can be used with Oat.
+Zero-dependency, useful JS libs that can be used with Oat Glassed.
 
 - [**tinyrouter.js**](https://github.com/knadh/tinyrouter.js): A tiny, zero-dependency lib for frontend routing and navigation on top of `window.history`. ~950 bytes.
 - [**highlighted-input.js**](https://github.com/knadh/highlighted-input.js):  Super tiny, zero dep Javascript lib that highlights specific keywords and tags in an `<input>` field. ~450 bytes 

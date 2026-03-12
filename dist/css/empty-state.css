@@ -1,0 +1,38 @@
+@layer components {
+  [data-empty] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-3);
+    padding: var(--space-12) var(--space-6);
+    text-align: center;
+    color: var(--muted-foreground);
+    background-color: light-dark(rgb(255 255 255 / 0.2), rgb(255 255 255 / 0.01));
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-large);
+    box-shadow: var(--glass-edge);
+    contain: paint;
+
+    & > svg, & > img {
+      width: 3rem;
+      height: 3rem;
+      opacity: 0.4;
+    }
+
+    & > :is(h1, h2, h3, h4, h5, h6) {
+      margin: 0;
+      color: var(--foreground);
+    }
+
+    & > p {
+      max-width: 28rem;
+      margin: 0;
+      font-size: var(--text-7);
+    }
+
+    & > :is(button, a.button) {
+      margin-block-start: var(--space-2);
+    }
+  }
+}

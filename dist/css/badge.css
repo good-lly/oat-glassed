@@ -1,0 +1,56 @@
+@layer components {
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    padding: var(--space-1) var(--space-4);
+    font-size: var(--text-8);
+    font-weight: var(--font-medium);
+    line-height: var(--leading-normal);
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+    border-radius: var(--radius-full);
+    border: 1px solid rgb(from #fff r g b / 0.12);
+    box-shadow: var(--shadow-small);
+
+    &.secondary {
+      background-color: var(--secondary);
+      color: var(--secondary-foreground);
+      border-color: light-dark(rgb(255 255 255 / 0.08), rgb(255 255 255 / 0.06));
+    }
+
+    &.outline {
+      background-color: transparent;
+      color: var(--foreground);
+      border: 1px solid var(--border);
+      box-shadow: none;
+    }
+
+    &.success {
+      color: var(--success);
+      border-color: light-dark(rgb(from var(--success) r g b / 0.15), rgb(from var(--success) r g b / 0.2));
+      background-color: light-dark(
+        color-mix(in srgb, var(--success) 8%, rgb(255 255 255 / 0.35)),
+        color-mix(in srgb, var(--success) 15%, rgb(0 0 0 / 0.25))
+      );
+    }
+
+    &.warning {
+      color: var(--warning);
+      border-color: light-dark(rgb(from var(--warning) r g b / 0.15), rgb(from var(--warning) r g b / 0.2));
+      background-color: light-dark(
+        color-mix(in srgb, var(--warning) 8%, rgb(255 255 255 / 0.35)),
+        color-mix(in srgb, var(--warning) 15%, rgb(0 0 0 / 0.25))
+      );
+    }
+
+    &.danger {
+      color: var(--danger);
+      border-color: light-dark(rgb(from var(--danger) r g b / 0.15), rgb(from var(--danger) r g b / 0.2));
+      background-color: light-dark(
+        color-mix(in srgb, var(--danger) 8%, rgb(255 255 255 / 0.35)),
+        color-mix(in srgb, var(--danger) 15%, rgb(0 0 0 / 0.25))
+      );
+    }
+  }
+}

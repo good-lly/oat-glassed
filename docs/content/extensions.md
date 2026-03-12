@@ -1,9 +1,9 @@
 +++
 title = "Extensions"
-description = "Community extensions for Oat UI"
+description = "Community extensions for Oat Glassed UI"
 +++
 
-Third-party extensions that work with Oat.
+Third-party extensions originally built for Oat that may work with Oat Glassed.
 
 - **[oat-chips](https://github.com/someshkar/oat-chips)**: Chip/tag component with dismissible filters, colors, and toggle selection. ~1KB gzipped ([Demo](https://oat-chips.somesh.dev)).
 

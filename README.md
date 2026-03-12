@@ -3,18 +3,39 @@
 (Forked [Oat UI](https://github.com/knadh/oat))
 See [CHANGELOG](CHANGELOG.md) for changes and updates.
 
-> Semantic, minimal, zero dependencies. ~10KB CSS and JS.
+> Semantic, minimal, zero dependencies. ~11KB CSS and JS.
 
-Oat Glassed is an ultra-lightweight HTML + CSS, semantic UI component library with zero dependencies. No framework, build, or dev complexity. Just include the tiny CSS and JS files and you are good to go building decent looking web applications with most commonly needed components and elements.
+Oat Glassed is an ultra-lightweight HTML + CSS, semantic UI component library with zero dependencies. No framework, build, or dev complexity. Just include the tiny CSS and JS files and you are good to go building decent looking web applications with most commonly needed components and elements. Forked from Oat UI, it is now built with a glassmorphism design and has a few new components.
 
 Semantic tags and attributes are styled contextually out of the box without classes, forcing best practices, and reducing markup class pollution. A few dynamic components are WebComponents and use minimal JavaScript.
 
-I wrote this to use in my own projects after getting sick of the ridiculous bloat, dependencies, and rug-pulls in Javascript UI/component libraries.
-
 See live demo and docs at [**https://good-lly.github.io/oat-glassed**](https://good-lly.github.io/oat-glassed)
-
-**IMPORTANT:** The lib is currently sub v1 and is likely to have breaking changes until it hits v1.
 
 ---
 
-<img width="739" height="735" alt="image" src="https://github.com/user-attachments/assets/b0a2f55c-659d-4aab-922c-b13d89eeab36" />
+<img width="739" height="735" alt="image" src="" />
+
+## Installation
+
+### CDN
+
+```html
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/oat-glassed@1.0.0/dist/oat-glassed.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/oat-glassed@1.0.0/dist/oat-glassed.min.js"></script>
+```
+
+### NPM
+
+```bash
+npm install oat-glassed
+```
+
+```js
+import "oat-glassed/dist/oat-glassed.min.css";
+import "oat-glassed/dist/oat-glassed.min.js";
+```
+
+## License is licensed under [MIT](LICENSE).
