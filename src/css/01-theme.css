@@ -30,9 +30,9 @@
     --input: light-dark(rgb(0 0 0 / 0.1), rgb(255 255 255 / 0.1));
     --ring: light-dark(#4a3f5f, #c8c4d4);
 
-    /* Glass */
-    --glass-blur: 18px;
-    --glass-saturate: 140%;
+    /* Glass — Tier 1 (real blur on nav, sidebar, dialog only) */
+    --glass-blur: 12px;
+    --glass-saturate: 120%;
     --glass-border: light-dark(
       rgb(255 255 255 / 0.65),
       rgb(255 255 255 / 0.09)
@@ -50,6 +50,11 @@
         rgb(255 255 255 / 0.03) 40%,
         rgb(255 255 255 / 0) 60%
       )
+    );
+    /* Faux glass edge — Tier 2 (inset highlights simulate glass reflection) */
+    --glass-edge: light-dark(
+      inset 0 0 0 1px rgb(255 255 255 / 0.12), inset 0 1px 0 rgb(255 255 255 / 0.15), 0 8px 32px rgb(0 0 0 / 0.08),
+      inset 0 0 0 1px rgb(255 255 255 / 0.08), inset 0 1px 0 rgb(255 255 255 / 0.1), 0 8px 32px rgb(0 0 0 / 0.25)
     );
 
     /* ==================== */
@@ -116,5 +121,27 @@
 
     --z-dropdown: 50;
     --z-modal: 200;
+  }
+
+  @media (prefers-reduced-transparency: reduce) {
+    :root {
+      --glass-blur: 0px;
+      --glass-saturate: 100%;
+      --card: light-dark(rgb(240 240 245 / 0.95), rgb(24 24 30 / 0.95));
+      --secondary: light-dark(rgb(235 235 240 / 0.95), rgb(40 40 50 / 0.92));
+      --muted: light-dark(rgb(235 235 240 / 0.92), rgb(38 38 46 / 0.88));
+      --faint: light-dark(rgb(246 246 250 / 0.9), rgb(22 22 28 / 0.85));
+      --accent: light-dark(rgb(235 235 242 / 0.95), rgb(48 48 58 / 0.92));
+      --glass-highlight: none;
+      --glass-edge: none;
+    }
+
+    *,
+    *::before,
+    *::after,
+    *::backdrop {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+    }
   }
 }

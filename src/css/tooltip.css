@@ -27,8 +27,6 @@
     color: #ececf1;
     border: 1px solid light-dark(rgb(255 255 255 / 0.08), rgb(255 255 255 / 0.12));
     border-radius: var(--radius-medium);
-    backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
-    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
     box-shadow: var(--shadow-medium);
   }
 

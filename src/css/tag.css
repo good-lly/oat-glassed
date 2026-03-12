@@ -9,10 +9,8 @@
     line-height: var(--leading-normal);
     background-color: var(--secondary);
     color: var(--secondary-foreground);
-    border: 1px solid var(--glass-border);
+    border: 1px solid light-dark(rgb(255 255 255 / 0.08), rgb(255 255 255 / 0.06));
     border-radius: var(--radius-full);
-    backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
-    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
 
     /* Dismiss button */
     & > button {
@@ -37,8 +35,6 @@
       background-color: var(--primary);
       color: var(--primary-foreground);
       border-color: rgb(from #fff r g b / 0.12);
-      backdrop-filter: none;
-      -webkit-backdrop-filter: none;
     }
 
     &.success {

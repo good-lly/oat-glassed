@@ -8,6 +8,7 @@
     padding: 0;
     border: none;
     background: transparent;
+    content-visibility: auto;
 
     overflow: visible;
 
@@ -59,9 +60,7 @@
     border-inline-start-width: var(--space-1);
     border-inline-start-style: solid;
     border-radius: var(--radius-large);
-    box-shadow: var(--shadow-large);
-    backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
-    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+    box-shadow: var(--glass-edge), var(--shadow-large);
     will-change: transform, opacity;
     transition: opacity var(--transition-in), transform var(--transition-in), margin var(--transition-in);
     line-height: 1;

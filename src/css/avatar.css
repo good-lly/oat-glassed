@@ -13,10 +13,8 @@
     overflow: hidden;
     flex-shrink: 0;
     vertical-align: middle;
-    border: 1.5px solid var(--glass-border);
+    border: 1.5px solid light-dark(rgb(255 255 255 / 0.08), rgb(255 255 255 / 0.06));
     box-shadow: var(--shadow-small);
-    backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
-    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
 
     & > img {
       width: 100%;

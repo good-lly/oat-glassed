@@ -129,9 +129,7 @@
     border-radius: var(--radius-medium);
     overflow-x: auto;
     margin-block-end: var(--space-4);
-    backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
-    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
-    box-shadow: var(--shadow-small);
+    box-shadow: var(--glass-edge);
 
     code {
       padding: 0;

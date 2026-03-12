@@ -5,11 +5,9 @@
     color: var(--card-foreground);
     border: 1px solid var(--glass-border);
     border-radius: var(--radius-large);
-    box-shadow: var(--shadow-glow);
+    box-shadow: var(--glass-edge);
     padding: var(--space-6);
     overflow: hidden;
-    backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
-    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
     contain: paint;
   }
 }

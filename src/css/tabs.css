@@ -7,8 +7,7 @@
     background-color: var(--muted);
     border-radius: var(--radius-medium);
     border: 1px solid var(--glass-border);
-    backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
-    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+    box-shadow: var(--glass-edge);
     contain: paint;
   }
 
@@ -36,8 +35,6 @@
       background-color: light-dark(rgb(255 255 255 / 0.75), rgb(255 255 255 / 0.1));
       color: var(--foreground);
       box-shadow: var(--shadow-small);
-      backdrop-filter: blur(12px) saturate(var(--glass-saturate));
-      -webkit-backdrop-filter: blur(12px) saturate(var(--glass-saturate));
     }
   }
 

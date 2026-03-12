@@ -56,8 +56,6 @@
     details {
       border: none;
       background: none;
-      backdrop-filter: none;
-      -webkit-backdrop-filter: none;
       overflow: visible;
 
       & + details { margin-top: 0; }

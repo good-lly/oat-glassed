@@ -9,9 +9,7 @@
     border: 1px solid var(--glass-border);
     border-radius: var(--radius-medium);
     font-size: var(--text-7);
-    backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
-    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
-    box-shadow: var(--shadow-small);
+    box-shadow: var(--glass-edge);
     contain: paint;
 
     &[data-variant] {
