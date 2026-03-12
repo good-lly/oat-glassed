@@ -11,6 +11,6 @@ Use the standard `title` attribute on any element to render a tooltip with smoot
 <button title="Save your changes">Save</button>
 <button title="Delete this item" data-variant="danger">Delete</button>
 <a href="#" title="View your profile">Profile</a>
-<span title="Images need a parent with title"><img src="https://oat.ink/logo.svg" height="32" /></span>
+<span title="Images need a parent with title"><img src="https://good-lly.github.io/oat-glassed/logo.svg" height="32" /></span>
 ```
 {% end %}

@@ -11,4 +11,4 @@ Third-party extensions that work with Oat.
 
 
 -------
-[Open a PR](https://github.com/knadh/oat) to list an extension here.
+[Open a PR](https://github.com/good-lly/oat-glassed) to list an extension here.

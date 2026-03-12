@@ -9,8 +9,8 @@ title = "Installation and usage"
 Include the CSS and JS files directly in your HTML:
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/@knadh/oat/oat-glassed.min.css">
-<script src="https://unpkg.com/@knadh/oat/oat-glassed.min.js" defer></script>
+<link rel="stylesheet" href="https://unpkg.com/oat-glassed/oat-glassed.min.css">
+<script src="https://unpkg.com/oat-glassed/oat-glassed.min.js" defer></script>
 ```
 
 ----------
@@ -18,17 +18,17 @@ Include the CSS and JS files directly in your HTML:
 ### npm
 
 ```bash
-npm install @knadh/oat
+npm install oat-glassed
 ```
 
 Then import in your project:
 
 ```js
-import '@knadh/oat/oat-glassed.min.css';
-import '@knadh/oat/oat-glassed.min.js';
+import 'oat-glassed/oat-glassed.min.css';
+import 'oat-glassed/oat-glassed.min.js';
 ```
 
-Or import individual files from `@knadh/oat/css` and `@knadh/oat/js`.
+Or import individual files from `oat-glassed/css` and `oat-glassed/js`.
 
 ----------
 
@@ -37,8 +37,8 @@ Or import individual files from `@knadh/oat/css` and `@knadh/oat/js`.
 Download the CSS and JS files:
 
 ```shell
-wget https://raw.githubusercontent.com/knadh/oat/refs/heads/gh-pages/oat-glassed.min.css
-wget https://raw.githubusercontent.com/knadh/oat/refs/heads/gh-pages/oat-glassed.min.js
+wget https://raw.githubusercontent.com/good-lly/oat-glassed/refs/heads/gh-pages/oat-glassed.min.css
+wget https://raw.githubusercontent.com/good-lly/oat-glassed/refs/heads/gh-pages/oat-glassed.min.js
 ```
 
 Then include them in your project:
@@ -79,6 +79,6 @@ Oat styles semantic HTML elements by default. No classes needed for basic stylin
 - [esbuild](https://esbuild.github.io/) installed for bundling+minifying JS and CSS.
 
 ### Running
-- Clone the [oat repo](https://github.com/knadh/oat)
+- Clone the [oat-glassed repo](https://github.com/good-lly/oat-glassed)
 - `cd docs` and run `zola serve` to access the docs/demo site at http://localhost:1111
 - After changing any CSS or JS files, run `make dist`. The demo site auto-updates with the changes.
