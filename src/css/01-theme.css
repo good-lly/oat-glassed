@@ -2,33 +2,34 @@
   :root {
     color-scheme: light dark;
 
-    /* Surface & text — Tailwind slate */
-    --background: light-dark(#f8fafc, #020617);
-    --foreground: light-dark(#0f172a, #f8fafc);
-    --card: light-dark(rgb(255 255 255 / 0.55), rgb(15 23 42 / 0.48));
-    --card-foreground: light-dark(#0f172a, #f8fafc);
-    --primary: light-dark(#4f46e5, #818cf8);
-    --primary-foreground: light-dark(#ffffff, #1e1b4b);
-    --secondary: light-dark(rgb(241 245 249 / 0.55), rgb(30 41 59 / 0.4));
-    --secondary-foreground: light-dark(#1e293b, #f1f5f9);
-    --muted: light-dark(rgb(241 245 249 / 0.45), rgb(30 41 59 / 0.4));
-    --muted-foreground: light-dark(#64748b, #94a3b8);
-    --faint: light-dark(rgb(248 250 252 / 0.35), rgb(15 23 42 / 0.3));
-    --faint-foreground: light-dark(#94a3b8, #64748b);
-    --accent: light-dark(rgb(241 245 249 / 0.55), rgb(30 41 59 / 0.4));
+    /* Surface & text — Tailwind gray */
+    --background: light-dark(#ffffff, #030712);
+    --foreground: light-dark(#111827, #f9fafb);
+    --card: light-dark(rgb(255 255 255 / 0.55), rgb(17 24 39 / 0.48));
+    --card-foreground: light-dark(#111827, #f9fafb);
+    --primary: light-dark(#111827, #f9fafb);
+    --primary-foreground: light-dark(#ffffff, #111827);
+    --secondary: light-dark(rgb(243 244 246 / 0.55), rgb(31 41 55 / 0.4));
+    --secondary-foreground: light-dark(#1f2937, #f3f4f6);
+    --muted: light-dark(rgb(243 244 246 / 0.45), rgb(31 41 55 / 0.4));
+    --muted-foreground: light-dark(#6b7280, #9ca3af);
+    --faint: light-dark(rgb(249 250 251 / 0.35), rgb(17 24 39 / 0.3));
+    --faint-foreground: light-dark(#9ca3af, #6b7280);
+    --accent: light-dark(rgb(243 244 246 / 0.55), rgb(31 41 55 / 0.4));
+    --link: light-dark(#0284c7, #7dd3fc);
 
     /* Semantic — Tailwind red/emerald/amber */
     --danger: light-dark(#ef4444, #f87171);
-    --danger-foreground: light-dark(#ffffff, #0f172a);
+    --danger-foreground: light-dark(#ffffff, #111827);
     --success: light-dark(#10b981, #34d399);
-    --success-foreground: light-dark(#ffffff, #0f172a);
+    --success-foreground: light-dark(#ffffff, #111827);
     --warning: light-dark(#f59e0b, #fbbf24);
-    --warning-foreground: #0f172a;
+    --warning-foreground: #111827;
 
-    /* Borders & rings — indigo ring */
+    /* Borders & rings */
     --border: light-dark(rgb(0 0 0 / 0.08), rgb(255 255 255 / 0.08));
     --input: light-dark(rgb(0 0 0 / 0.1), rgb(255 255 255 / 0.1));
-    --ring: light-dark(#4f46e5, #818cf8);
+    --ring: light-dark(#111827, #f9fafb);
 
     /* Glass — Tier 1 (real blur on nav, sidebar, dialog only) */
     --glass-blur: 12px;
@@ -127,11 +128,11 @@
     :root {
       --glass-blur: 0px;
       --glass-saturate: 100%;
-      --card: light-dark(rgb(241 245 249 / 0.95), rgb(15 23 42 / 0.95));
-      --secondary: light-dark(rgb(226 232 240 / 0.95), rgb(30 41 59 / 0.92));
-      --muted: light-dark(rgb(226 232 240 / 0.92), rgb(30 41 59 / 0.88));
-      --faint: light-dark(rgb(241 245 249 / 0.9), rgb(15 23 42 / 0.85));
-      --accent: light-dark(rgb(226 232 240 / 0.95), rgb(30 41 59 / 0.92));
+      --card: light-dark(rgb(243 244 246 / 0.95), rgb(17 24 39 / 0.95));
+      --secondary: light-dark(rgb(229 231 235 / 0.95), rgb(31 41 55 / 0.92));
+      --muted: light-dark(rgb(229 231 235 / 0.92), rgb(31 41 55 / 0.88));
+      --faint: light-dark(rgb(243 244 246 / 0.9), rgb(17 24 39 / 0.85));
+      --accent: light-dark(rgb(229 231 235 / 0.95), rgb(31 41 55 / 0.92));
       --glass-highlight: none;
       --glass-edge: none;
     }

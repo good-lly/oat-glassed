@@ -10,9 +10,12 @@
     margin-inline: auto;
     margin-block-end: auto;
     padding: 0;
-    display: flex;
     flex-direction: column;
     overflow: hidden;
+
+    &[open] {
+      display: flex;
+    }
   }
 
   ot-command input[type="search"] {
@@ -59,6 +62,7 @@
   ot-command [role="option"] {
     display: flex;
     align-items: center;
+    justify-content: flex-start;
     gap: var(--space-2);
     width: 100%;
     padding: var(--space-2) var(--space-3);
@@ -68,11 +72,18 @@
     color: var(--foreground);
     border: none;
     border-radius: var(--radius-small);
+    box-shadow: none;
     cursor: pointer;
     transition: background-color var(--transition-fast);
 
     &:hover, &[aria-selected="true"] {
       background-color: var(--accent);
+      box-shadow: none;
+    }
+
+    &:active {
+      transform: none;
+      box-shadow: none;
     }
 
     & > kbd {

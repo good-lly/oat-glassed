@@ -90,13 +90,13 @@
   }
 
   a {
-    color: var(--primary);
+    color: var(--link);
     text-decoration: underline;
     text-underline-offset: 2px;
     transition: color var(--transition-fast);
 
     &:hover {
-      color: rgb(from var(--primary) r g b / 0.8);
+      color: rgb(from var(--link) r g b / 0.8);
     }
   }
 

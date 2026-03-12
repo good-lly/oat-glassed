@@ -251,8 +251,7 @@
       document.addEventListener("keydown", this);
       this.#dialog.addEventListener("keydown", this);
       if (this.#input) this.#input.addEventListener("input", this);
-      const listbox = this.$('[role="listbox"]');
-      if (listbox) listbox.addEventListener("click", this);
+      this.#dialog.addEventListener("click", this);
     }
     #wrap() {
       const d = document.createElement("dialog");
@@ -282,6 +281,11 @@
         return;
       }
       if (!this.#dialog.open) return;
+      if (e.key === "Escape") {
+        e.preventDefault();
+        this.#dialog.close();
+        return;
+      }
       this.#items = this.$$('[role="option"]:not([hidden])');
       if (!this.#items.length) return;
       const next = this.keyNav(e, this.#idx, this.#items.length, "ArrowUp", "ArrowDown", true);
@@ -318,8 +322,16 @@
       this.$$('[role="option"]').forEach((el) => el.removeAttribute("aria-selected"));
     }
     onclick(e) {
+      if (e.target === this.#dialog) {
+        this.#dialog.close();
+        return;
+      }
       if (e.target.closest('[role="option"]')) {
         this.#dialog.close();
+        return;
+      }
+      if (this.#input && !e.target.closest("input")) {
+        this.#input.focus();
       }
     }
     cleanup() {
