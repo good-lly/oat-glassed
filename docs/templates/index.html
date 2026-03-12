@@ -5,7 +5,7 @@
 {% block content %}
 <section class="intro">
   <p class="logo">
-    <a href="/"><img src="/logo.svg" alt="{{ config.title }}"></a>
+    <a href="{{ config.base_url }}"><img src="{{ config.base_url }}logo.svg" alt="{{ config.title }}"></a>
   </p>
 
   <h1 class="title">Ultra-lightweight UI library</h1>
@@ -22,8 +22,8 @@
   </p>
   <br />
   <div class="hstack">
-    <a href="/components/" class="button">Browse components</a>
-    <a href="/usage/" class="button outline">Get started</a>
+    <a href="{{ config.base_url }}components/" class="button">Browse components</a>
+    <a href="{{ config.base_url }}usage/" class="button outline">Get started</a>
   </div>
 </section>
 

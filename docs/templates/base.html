@@ -7,8 +7,8 @@
   <title>{% block title %}{{ config.title }}{% endblock %}</title>
 
   <meta property="og:image" content="https://oat.ink/thumb.png">
-  <link rel="stylesheet" href="/oat.min.css">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="{{ config.base_url }}oat.min.css">
+  <link rel="icon" href="{{ config.base_url }}favicon.svg" type="image/svg+xml" />
 
   <script>
     // Prevent FOUC - apply theme before rendering.
@@ -20,9 +20,9 @@
       }
     })();
   </script>
-  <script src="/oat.min.js" defer></script>
-  <script src="/main.js"></script>
-  <link href="/style.css" rel="stylesheet" />
+  <script src="{{ config.base_url }}oat.min.js" defer></script>
+  <script src="{{ config.base_url }}main.js"></script>
+  <link href="{{ config.base_url }}style.css" rel="stylesheet" />
 </head>
 
 <body data-sidebar-layout class="{% if current_path == '/' %}home{% else %}{{ current_path | slugify }}{% endif %}">
@@ -37,13 +37,13 @@
           </svg>
         </button>
 
-        <a href="/" class="favicon"><img src="/favicon.svg" alt="{{ config.title }}" /></a>
-        <a href="/" class="logo"><img src="/logo.svg" alt="{{ config.title }}" /></a>
+        <a href="{{ config.base_url }}" class="favicon"><img src="{{ config.base_url }}favicon.svg" alt="{{ config.title }}" /></a>
+        <a href="{{ config.base_url }}" class="logo"><img src="{{ config.base_url }}logo.svg" alt="{{ config.title }}" /></a>
       </div>
 
       <div class="col-8 justify-end hstack">
-        <a href="/">Home</a>
-        <a href="/demo">Demo</a>
+        <a href="{{ config.base_url }}">Home</a>
+        <a href="{{ config.base_url }}demo">Demo</a>
         <a href="https://github.com/knadh/oat">GitHub</a>
         <ot-dropdown>
           <button popovertarget="nav-menu" class="outline small">
@@ -51,12 +51,12 @@
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
           </button>
           <menu popover id="nav-menu">
-            <a href="/usage" role="menuitem">Usage</a>
-            <a href="/customizing" role="menuitem">Customizing</a>
-            <a href="/other-libs" role="menuitem">Other libs</a>
+            <a href="{{ config.base_url }}usage" role="menuitem">Usage</a>
+            <a href="{{ config.base_url }}customizing" role="menuitem">Customizing</a>
+            <a href="{{ config.base_url }}other-libs" role="menuitem">Other libs</a>
             <hr>
-            <a href="/recipes" role="menuitem">Recipes</a>
-            <a href="/extensions" role="menuitem">Extensions</a>
+            <a href="{{ config.base_url }}recipes" role="menuitem">Recipes</a>
+            <a href="{{ config.base_url }}extensions" role="menuitem">Extensions</a>
           </menu>
         </ot-dropdown>
       </div>
@@ -66,14 +66,14 @@
   <aside data-sidebar class="main-sidebar">
     <nav>
       <ul>
-        <li><a href="https://github.com/knadh/oat"><img src="/github.svg" alt="GitHub icon" /> GitHub</a></li>
-        <li><a href="/">Home</a></li>
-        <li><a href="/demo/">Demo</a></li>
-        <li><a href="/usage/">Usage</a></li>
-        <li><a href="/recipes/">Recipes</a></li>
-        <li><a href="/customizing/">Customizing</a></li>
-        <li><a href="/other-libs/">Other tiny libs</a></li>
-        <li><a href="/extensions/">Extensions</a></li>
+        <li><a href="https://github.com/knadh/oat"><img src="{{ config.base_url }}github.svg" alt="GitHub icon" /> GitHub</a></li>
+        <li><a href="{{ config.base_url }}">Home</a></li>
+        <li><a href="{{ config.base_url }}demo/">Demo</a></li>
+        <li><a href="{{ config.base_url }}usage/">Usage</a></li>
+        <li><a href="{{ config.base_url }}recipes/">Recipes</a></li>
+        <li><a href="{{ config.base_url }}customizing/">Customizing</a></li>
+        <li><a href="{{ config.base_url }}other-libs/">Other tiny libs</a></li>
+        <li><a href="{{ config.base_url }}extensions/">Extensions</a></li>
         <li>
           <details open>
             <summary>
@@ -86,10 +86,10 @@
               Components
             </summary>
             <ul>
-              <li><a href="/components">All components</a></li>
+              <li><a href="{{ config.base_url }}components">All components</a></li>
               {% set components = get_section(path="components/_index.md") %}
               {% for component in components.pages %}
-              <li><a href="/components/#{{ component.slug }}">{{ component.title }}
+              <li><a href="{{ config.base_url }}components/#{{ component.slug }}">{{ component.title }}
                 {% if component.extra.webcomponent | default(value=false) %}<sup title="WebComponent">WC</sup>{% endif %}</a></li>
               {% endfor %}
             </ul>
