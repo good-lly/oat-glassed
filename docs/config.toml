@@ -1,5 +1,5 @@
 base_url = "/oat-glassed/"
-title = "Oat UI"
+title = "Oat Glassed UI"
 compile_sass = false
 build_search_index = false
 
@@ -7,4 +7,4 @@ build_search_index = false
 highlighting = { theme = "one-dark-pro" }
 
 [extra]
-description = "Oat - Ultra-lightweight, semantic, zero-dependency HTML UI component library"
+description = "Oat Glassed - Ultra-lightweight, semantic, zero-dependency HTML UI component library"
