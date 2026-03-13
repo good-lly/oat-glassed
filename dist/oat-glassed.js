@@ -280,11 +280,19 @@
         this.#input.focus();
       }
       this.#reset();
+      this.#selectFirst();
     }
     #reset() {
       this.#idx = -1;
       this.$$('[role="listbox"] > *').forEach((el) => el.hidden = false);
       this.$$('[role="option"]').forEach((el) => el.removeAttribute("aria-selected"));
+    }
+    #selectFirst() {
+      this.#items = this.$$('[role="option"]:not([hidden])');
+      if (this.#items.length) {
+        this.#idx = 0;
+        this.#items[0].setAttribute("aria-selected", "true");
+      }
     }
     onkeydown(e) {
       if ((e.metaKey || e.ctrlKey) && e.key === "k") {
@@ -332,12 +340,14 @@
       if (section) section.hidden = !hasVisible;
       this.#idx = -1;
       this.$$('[role="option"]').forEach((el) => el.removeAttribute("aria-selected"));
+      this.#selectFirst();
     }
     onclick(e) {
       if (e.target === this.#dialog) {
         this.#dialog.close();
         return;
       }
+      if (e.target.closest('[role="option"] menu')) return;
       if (e.target.closest('[role="option"]')) {
         this.#dialog.close();
         return;
