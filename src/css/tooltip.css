@@ -14,29 +14,25 @@
     z-index: 1000;
   }
 
-  /* Text */
   [data-tooltip]::after {
     content: attr(data-tooltip);
-    inset-block-end: calc(100% + 10px);
+    inset-block-end: calc(100% + 8px);
     transform: translateX(-50%) translateY(4px);
     padding: var(--space-2) var(--space-3);
     font-size: var(--text-7);
     line-height: 1;
     white-space: nowrap;
-    background: light-dark(rgb(20 20 30 / 0.75), rgb(40 40 55 / 0.8));
-    color: #ececf1;
-    border: 1px solid light-dark(rgb(255 255 255 / 0.08), rgb(255 255 255 / 0.12));
+    background: var(--surface-highest);
+    color: var(--foreground);
     border-radius: var(--radius-medium);
-    box-shadow: var(--shadow-medium);
   }
 
-  /* Arrow */
   [data-tooltip]::before {
     content: '';
-    inset-block-end: calc(100% - 5px);
+    inset-block-end: calc(100% - 4px);
     transform: translateX(-50%) translateY(4px);
-    border: 8px solid transparent;
-    border-top-color: light-dark(rgb(20 20 30 / 0.75), rgb(40 40 55 / 0.8));
+    border: 6px solid transparent;
+    border-top-color: var(--surface-highest);
   }
 
   [data-tooltip]:is(:hover, :focus-visible)::before,

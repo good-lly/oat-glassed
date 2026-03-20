@@ -1,18 +1,13 @@
 @layer components {
   details {
-    border: 1px solid var(--glass-border);
+    background-color: var(--surface);
     border-radius: var(--radius-medium);
     overflow: hidden;
-    background-color: light-dark(rgb(255 255 255 / 0.35), rgb(255 255 255 / 0.02));
-    background-image: var(--glass-highlight);
-    box-shadow: var(--glass-edge);
     contain: paint;
     content-visibility: auto;
 
     & + details {
-      margin-top: -1px;
-      border-start-start-radius: 0;
-      border-start-end-radius: 0;
+      margin-top: var(--space-1);
     }
 
     &:has(+ details) {
@@ -20,8 +15,13 @@
       border-end-end-radius: 0;
     }
 
+    & + details {
+      border-start-start-radius: 0;
+      border-start-end-radius: 0;
+    }
+
     &[open] summary {
-      border-bottom: 1px solid var(--border);
+      background-color: var(--surface-high);
     }
   }
 
@@ -37,7 +37,7 @@
     transition: background-color var(--transition-fast);
 
     &:hover {
-      background-color: var(--accent);
+      background-color: var(--surface-high);
     }
 
     &::-webkit-details-marker, &::marker {

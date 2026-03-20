@@ -14,7 +14,6 @@
     tab-size: 4;
   }
 
-  /* Top-layer elements don't inherit from body. Set explicitly. */
   body, dialog, [popover] {
     font-family: var(--font-sans);
     font-size: var(--text-regular);
@@ -43,8 +42,10 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
     font-weight: var(--font-semibold);
-    line-height: 1.25;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
 
     &:first-child {
       margin-block-start: 0;
@@ -93,10 +94,10 @@
     color: var(--link);
     text-decoration: underline;
     text-underline-offset: 2px;
-    transition: color var(--transition-fast);
+    transition: opacity var(--transition-fast);
 
     &:hover {
-      color: rgb(from var(--link) r g b / 0.8);
+      opacity: 0.8;
     }
   }
 
@@ -109,27 +110,25 @@
   }
 
   small {
-    font-size: var(--text-7);
+    font-size: var(--text-8);
   }
 
   code {
     font-family: var(--font-mono);
     font-size: 0.875em;
     padding: calc(var(--space-1) / 2) var(--space-2);
-    background-color: var(--faint);
-    border: 1px solid var(--border);
+    background-color: var(--surface-high);
     border-radius: var(--radius-small);
   }
 
   pre {
     font-family: var(--font-mono);
     padding: var(--space-5);
-    background-color: light-dark(rgb(246 246 250 / 0.45), rgb(18 18 24 / 0.45));
-    border: 1px solid var(--glass-border);
+    background-color: var(--surface-lowest);
+    border: 1px solid var(--border);
     border-radius: var(--radius-medium);
     overflow-x: auto;
     margin-block-end: var(--space-4);
-    box-shadow: var(--glass-edge);
 
     code {
       padding: 0;
@@ -140,18 +139,19 @@
   }
 
   blockquote {
-    border-inline-start: 3px solid light-dark(rgb(from var(--primary) r g b / 0.3), rgb(from var(--primary) r g b / 0.4));
+    border-inline-start: 3px solid rgb(from var(--primary) r g b / 0.4);
     padding: var(--space-3) var(--space-4);
     margin: var(--space-4) 0;
     color: var(--muted-foreground);
     font-style: italic;
-    background-color: var(--faint);
+    background-color: var(--surface-low);
     border-radius: 0 var(--radius-small) var(--radius-small) 0;
   }
 
   hr {
     border: none;
-    border-top: 1px solid var(--border);
+    height: 1px;
+    background-color: var(--border);
     margin: var(--space-2) 0;
   }
 
@@ -173,7 +173,7 @@
   }
 
   mark {
-    background-color: rgb(from var(--warning) r g b / 0.3);
+    background-color: rgb(from var(--warning) r g b / 0.25);
     padding: calc(var(--space-1) / 2) var(--space-1);
     border-radius: var(--radius-small);
   }

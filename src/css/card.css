@@ -1,14 +1,13 @@
 @layer components {
   .card {
     background-color: var(--card);
-    background-image: var(--glass-highlight);
     color: var(--card-foreground);
     border: 1px solid var(--glass-border);
     border-radius: var(--radius-large);
-    box-shadow: var(--glass-edge);
     padding: var(--space-6);
     overflow: hidden;
     contain: paint;
+    transition: background-color var(--transition-fast);
 
     > * + * {
       margin-block-start: var(--space-4);

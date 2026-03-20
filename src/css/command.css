@@ -22,16 +22,14 @@
     margin: 0;
     padding: var(--space-3) var(--space-4);
     font-size: var(--text-6);
-    background: var(--muted);
+    background: var(--surface-high);
     border: none;
     border-radius: calc(var(--radius-large) - var(--space-1));
-    box-shadow: none;
 
     &:focus {
       outline: none;
       border-color: transparent;
-      background: var(--muted);
-      box-shadow: none;
+      background: var(--surface-high);
     }
 
     &::-webkit-search-cancel-button {
@@ -71,18 +69,15 @@
     color: var(--foreground);
     border: none;
     border-radius: var(--radius-small);
-    box-shadow: none;
     cursor: pointer;
     transition: background-color var(--transition-fast);
 
     &:hover, &[aria-selected="true"] {
-      background-color: var(--accent);
-      box-shadow: none;
+      background-color: var(--surface-high);
     }
 
     &:active {
       transform: none;
-      box-shadow: none;
     }
 
     & > kbd {
@@ -91,8 +86,8 @@
       font-family: var(--font-mono);
       font-size: var(--text-8);
       color: var(--muted-foreground);
-      background-color: var(--muted);
-      border: 1px solid var(--glass-border);
+      background-color: var(--surface-lowest);
+      border: 1px solid var(--border);
       border-radius: var(--radius-small);
     }
 
@@ -135,18 +130,16 @@
       & > button {
         padding: 2px var(--space-2);
         font-size: var(--text-8);
-        background: var(--muted);
+        background: var(--surface-high);
         color: var(--muted-foreground);
-        border: 1px solid var(--glass-border);
+        border: 1px solid var(--border);
         border-radius: var(--radius-small);
         cursor: pointer;
-        box-shadow: none;
         line-height: 1.4;
 
         &:hover {
-          background: var(--background);
+          background: var(--surface-highest);
           color: var(--foreground);
-          box-shadow: none;
         }
       }
     }

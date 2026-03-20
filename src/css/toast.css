@@ -54,18 +54,17 @@
     max-width: 28rem;
     min-width: 20rem;
     pointer-events: auto;
-    background-color: var(--card);
-    background-image: var(--glass-highlight);
+    background-color: var(--surface);
     border: 1px solid var(--glass-border);
     border-inline-start-width: var(--space-1);
     border-inline-start-style: solid;
     border-radius: var(--radius-large);
-    box-shadow: var(--glass-edge), var(--shadow-large);
     will-change: transform, opacity;
     transition: opacity var(--transition-in), transform var(--transition-in), margin var(--transition-in);
     line-height: 1;
 
     .toast-title {
+      font-family: var(--font-display);
       font-weight: 600;
       margin: 0 0 var(--space-3) 0;
     }

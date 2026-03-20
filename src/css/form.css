@@ -3,12 +3,14 @@
     display: block;
     font-size: var(--text-7);
     font-weight: var(--font-medium);
+    color: var(--muted-foreground);
 
     &:has(input:where([type=checkbox], [type=radio])) {
       display: inline-flex;
       align-items: center;
       gap: var(--space-2);
       font-weight: var(--font-normal);
+      color: var(--foreground);
     }
   }
 
@@ -18,25 +20,20 @@
     padding: var(--space-2) var(--space-3);
     font-size: var(--text-7);
     line-height: var(--leading-normal);
-    background-color: light-dark(rgb(255 255 255 / 0.45), rgb(255 255 255 / 0.04));
+    background-color: var(--surface-lowest);
     color: var(--foreground);
     border: 1px solid var(--input);
     border-radius: var(--radius-medium);
-    box-shadow: inset 0 1px 0 light-dark(rgb(255 255 255 / 0.6), rgb(255 255 255 / 0.04));
-    transition: border-color var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast);
+    transition: border-color var(--transition-fast), background-color var(--transition-fast);
 
     &::placeholder {
-      color: var(--muted-foreground);
+      color: var(--faint-foreground);
     }
 
     &:focus {
       outline: none;
       border-color: var(--ring);
-      background-color: light-dark(rgb(255 255 255 / 0.6), rgb(255 255 255 / 0.06));
-      box-shadow:
-        0 0 0 3px rgb(from var(--ring) r g b / 0.12),
-        inset 0 1px 0 light-dark(rgb(255 255 255 / 0.5), rgb(255 255 255 / 0.03));
-      z-index: 1;
+      background-color: var(--surface-low);
     }
 
     &:disabled {
@@ -47,9 +44,7 @@
       border-color: var(--danger);
 
       &:focus {
-        box-shadow:
-          0 0 0 3px rgb(from var(--danger) r g b / 0.12),
-          inset 0 1px 0 light-dark(rgb(255 255 255 / 0.5), rgb(255 255 255 / 0.03));
+        border-color: var(--danger);
       }
     }
   }
@@ -63,7 +58,7 @@
 
   select {
     appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2371717a' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%238b95a5' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right var(--space-2) center;
     padding-inline-end: var(--space-6);
@@ -75,8 +70,8 @@
     height: 1rem;
     margin: 0;
     position: relative;
-    background-color: var(--background);
-    border: 1px solid var(--input);
+    background-color: var(--surface-lowest);
+    border: 1px solid rgb(255 255 255 / 0.15);
     transition: background-color var(--transition-fast), border-color var(--transition-fast);
 
     &:checked {
@@ -110,7 +105,8 @@
       width: calc(var(--switch-height) * 2);
       height: var(--switch-height);
       border-radius: var(--radius-full);
-      background-color: var(--input);
+      background-color: var(--surface-high);
+      border-color: transparent;
 
       &::before {
         content: "";
@@ -120,10 +116,9 @@
         transform: translateY(-50%);
         width: var(--switch-thumb);
         height: var(--switch-thumb);
-        background-color: var(--background);
+        background-color: var(--muted-foreground);
         border-radius: var(--radius-full);
-        transition: transform var(--transition);
-        box-shadow: var(--shadow-small);
+        transition: transform var(--transition), background-color var(--transition);
       }
 
       &:checked {
@@ -135,9 +130,14 @@
 
         &::before {
           transform: translateY(-50%) translateX(var(--switch-height));
+          background-color: var(--primary-foreground);
         }
       }
     }
+  }
+
+  input[type=password] {
+    letter-spacing: 0.125em;
   }
 
   input[type=radio] {
@@ -157,13 +157,13 @@
     width: 100%;
     height: var(--bar-height);
     appearance: none;
-    background: var(--muted);
+    background: var(--surface-high);
     border-radius: var(--radius-full);
 
     &::-webkit-slider-thumb {
       appearance: none;
-      width: 1.25rem;
-      height: 1.25rem;
+      width: 1.125rem;
+      height: 1.125rem;
       background: var(--primary);
       border-radius: var(--radius-full);
       transition: transform var(--transition-fast);
@@ -174,8 +174,8 @@
     }
 
     &::-moz-range-thumb {
-      width: 1.25rem;
-      height: 1.25rem;
+      width: 1.125rem;
+      height: 1.125rem;
       background: var(--primary);
       border: none;
       border-radius: var(--radius-full);
@@ -208,7 +208,8 @@
     & > :is(input, textarea, select) {
       flex: 1;
       margin-block-start: 0;
-     
+      padding-block: var(--space-3);
+
       &:not(:focus):not(:last-child) {
         border-inline-end-color: transparent;
       }
@@ -219,21 +220,25 @@
       &:first-child {
         border-radius: var(--radius-medium) 0 0 var(--radius-medium);
       }
-      
+
       &:last-child {
         border-radius: 0 var(--radius-medium) var(--radius-medium) 0;
       }
+    }
+
+    & > button {
+      padding-block: var(--space-3);
     }
 
     & > legend {
       float: inline-start;
       display: inline-flex;
       align-items: center;
-      padding: 0 var(--space-3);
+      padding: var(--space-3);
       line-height: var(--leading-normal);
       font-weight: var(--font-normal);
       color: var(--muted-foreground);
-      background-color: var(--muted);
+      background-color: var(--surface-high);
       border: 1px solid var(--input);
       border-inline-end: none;
       border-radius: var(--radius-medium) 0 0 var(--radius-medium);
@@ -241,9 +246,12 @@
   }
 
   [data-field] {
-    margin-block-end: var(--space-4);
+    margin-block-start: var(--space-4);
 
-    /* Hint text that succeeds an input with aria-describedby */
+    &:first-child {
+      margin-block-start: 0;
+    }
+
     [data-hint], .error {
       font-size: var(--text-8);
       font-weight: var(--font-normal);
@@ -255,10 +263,50 @@
       display: none;
     }
 
-    /* Reveal error on data-field="error" */
     &[data-field="error"] .error {
       display: block;
       color: var(--danger);
+    }
+  }
+
+  .input-password {
+    display: block;
+    position: relative;
+
+    & > input {
+      padding-inline-end: var(--space-8);
+    }
+  }
+
+  .input-password-toggle {
+    position: absolute;
+    inset-inline-end: 1px;
+    inset-block-start: 1px;
+    inset-block-end: 1px;
+    display: flex;
+    align-items: center;
+    padding-inline: var(--space-2);
+    background: none;
+    border: none;
+    border-radius: 0 var(--radius-medium) var(--radius-medium) 0;
+    cursor: pointer;
+    color: var(--muted-foreground);
+    transition: color var(--transition-fast);
+
+    &:hover {
+      color: var(--foreground);
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      width: 1.125rem;
+      height: 1.125rem;
+      background-color: currentColor;
+      mask-image: var(--pw-icon);
+      mask-size: contain;
+      mask-repeat: no-repeat;
+      mask-position: center;
     }
   }
 }

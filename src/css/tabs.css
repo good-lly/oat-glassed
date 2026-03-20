@@ -4,10 +4,8 @@
     align-items: center;
     gap: var(--space-1);
     padding: var(--space-1);
-    background-color: var(--muted);
+    background-color: var(--surface-low);
     border-radius: var(--radius-medium);
-    border: 1px solid var(--glass-border);
-    box-shadow: var(--glass-edge);
     contain: paint;
   }
 
@@ -23,18 +21,16 @@
     color: var(--muted-foreground);
     border: none;
     border-radius: calc(var(--radius-medium) - 2px);
-    box-shadow: none;
     cursor: pointer;
-    transition: background-color var(--transition-fast), color var(--transition-fast), box-shadow var(--transition-fast);
+    transition: background-color var(--transition-fast), color var(--transition-fast);
 
     &:hover {
       color: var(--foreground);
     }
 
     &[aria-selected="true"] {
-      background-color: light-dark(rgb(255 255 255 / 0.75), rgb(255 255 255 / 0.1));
+      background-color: var(--surface-highest);
       color: var(--foreground);
-      box-shadow: var(--shadow-small);
     }
   }
 

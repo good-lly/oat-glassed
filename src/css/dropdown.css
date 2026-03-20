@@ -4,13 +4,11 @@
       position: fixed;
       margin: 0;
       min-width: 12rem;
-      background-color: light-dark(rgb(255 255 255 / 0.72), rgb(17 24 39 / 0.65));
-      background-image: var(--glass-highlight);
-      backdrop-filter: blur(16px) saturate(140%);
-      -webkit-backdrop-filter: blur(16px) saturate(140%);
-      border: 1px solid light-dark(rgb(255 255 255 / 0.7), rgb(255 255 255 / 0.12));
+      background-color: var(--surface);
+      backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+      -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+      border: 1px solid var(--glass-border);
       border-radius: var(--radius-medium);
-      box-shadow: var(--glass-edge), var(--shadow-large);
       will-change: transform, opacity;
       opacity: 0;
       transform: translateY(-6px) scale(0.96);
@@ -46,12 +44,11 @@
       background: none;
       border: none;
       border-radius: var(--radius-small);
-      box-shadow: none;
       cursor: pointer;
       transition: background-color var(--transition-fast);
 
       &:hover, &:focus {
-        background-color: var(--accent);
+        background-color: var(--surface-high);
         outline: none;
       }
     }

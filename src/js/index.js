@@ -4,6 +4,7 @@ import './dropdown.js';
 import './tooltip.js';
 import './sidebar.js';
 import './command.js';
+import './password.js';
 import { toast, toastEl, toastClear } from './toast.js';
 
 // Register the global window.ot.* APIs.

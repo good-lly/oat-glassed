@@ -15,12 +15,9 @@
       grid-row: 2;
       min-height: 0;
       z-index: 1;
-      background-color: light-dark(rgb(248 250 252 / 0.55), rgb(2 6 23 / 0.55));
-      backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
-      -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+      background-color: var(--surface-low);
       will-change: transform;
       contain: layout style paint;
-      border-inline-end: 1px solid var(--border);
       display: flex;
       flex-direction: column;
 
@@ -63,7 +60,7 @@
           transition: background-color var(--transition-fast);
 
           &:is(:hover, [aria-current]) {
-            background-color: var(--accent);
+            background-color: var(--surface-high);
           }
         }
 
@@ -73,7 +70,7 @@
           background: none;
 
           & + details { margin-top: 0; }
-          &[open] summary { border-bottom: none; }
+          &[open] summary { background-color: transparent; }
           > ul { margin-inline-start: var(--space-4); padding: var(--space-1) 0; }
         }
 
@@ -105,12 +102,11 @@
     flex-wrap: wrap;
     gap: var(--space-3);
     padding: var(--space-2) var(--space-4);
-    background-color: light-dark(rgb(248 250 252 / 0.55), rgb(2 6 23 / 0.55));
+    background-color: var(--surface-low);
     backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
     -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
     will-change: transform;
     contain: layout style paint;
-    border-bottom: 1px solid var(--glass-border);
 
     a {
       text-decoration: none;
@@ -128,11 +124,11 @@
         transition: background-color var(--transition-fast);
 
         &:hover {
-          background-color: var(--accent);
+          background-color: var(--surface-high);
         }
 
         &[aria-current] {
-          background-color: var(--accent);
+          background-color: var(--surface-high);
           font-weight: var(--font-medium);
         }
       }
@@ -170,7 +166,6 @@
       align-items: stretch;
       gap: var(--space-1);
       padding-block: var(--space-2);
-      border-top: 1px solid var(--border);
 
       a {
         padding: var(--space-2) var(--space-3);
@@ -216,7 +211,6 @@
           transform: translateX(-100%);
           opacity: 0;
           visibility: hidden;
-          border-inline-end: none;
         }
       }
     }
@@ -235,7 +229,6 @@
         z-index: 2;
         width: 16rem;
         transform: translateX(-100%);
-        box-shadow: var(--shadow-large);
       }
 
       &[data-sidebar-open] > aside[data-sidebar] {
@@ -249,7 +242,6 @@
       align-items: center;
       gap: var(--space-3);
       padding: var(--space-3) var(--space-4);
-      border-bottom: 1px solid var(--border);
     }
   }
 }

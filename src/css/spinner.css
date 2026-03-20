@@ -7,7 +7,7 @@
       margin: auto;
       width: 1.5rem;
       height: 1.5rem;
-      border: 2px solid var(--muted);
+      border: 2px solid var(--surface-high);
       border-top-color: var(--primary);
       border-radius: var(--radius-full);
       animation: spin 1s linear infinite;
@@ -30,8 +30,6 @@
 
       > * {
         opacity: 0.3;
-
-        /* "disable" all elements in the container while it's busy */
         pointer-events: none;
       }
 

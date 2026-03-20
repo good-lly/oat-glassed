@@ -8,10 +8,9 @@
     padding: var(--space-12) var(--space-6);
     text-align: center;
     color: var(--muted-foreground);
-    background-color: light-dark(rgb(255 255 255 / 0.2), rgb(255 255 255 / 0.01));
-    border: 1px solid var(--glass-border);
+    background-color: var(--surface-low);
+    border: 1px solid var(--border);
     border-radius: var(--radius-large);
-    box-shadow: var(--glass-edge);
     contain: paint;
 
     & > svg, & > img {

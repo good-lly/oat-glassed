@@ -7,11 +7,9 @@
     max-height: 85vh;
     margin: auto;
     padding: 0;
-    background-color: var(--card);
-    background-image: var(--glass-highlight);
+    background-color: var(--surface);
     border: 1px solid var(--glass-border);
     border-radius: var(--radius-large);
-    box-shadow: var(--glass-edge), var(--shadow-large);
     backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
     -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
     will-change: transform, opacity;
@@ -37,7 +35,7 @@
     }
 
     &::backdrop {
-      background-color: light-dark(rgb(0 0 0 / 0.2), rgb(0 0 0 / 0.45));
+      background-color: rgb(0 0 0 / 0.55);
       backdrop-filter: blur(6px) saturate(var(--glass-saturate));
       -webkit-backdrop-filter: blur(6px) saturate(var(--glass-saturate));
       opacity: 0;
